@@ -72,7 +72,7 @@ namespace IntroCS
       double totalScore = 0;
       while (i <= numberOfGrades){
         double score = UI.PromptDouble("Please enter the grade of the " +
-         "assignment" + i + ": ");
+         "assignment " + i + ": ");
         i++;
         totalScore += score;
       };
