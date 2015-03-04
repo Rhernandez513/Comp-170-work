@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "String_operations_lab", "St
 		{3B01F76C-479F-4B7A-BFA9-CC5166995BEA} = {3B01F76C-479F-4B7A-BFA9-CC5166995BEA}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopLab", "LoopLab\LoopLab.csproj", "{F2B55B40-C7B9-4361-9A31-E8A382641B26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopExcersize_6421", "LoopExcersize_6421\LoopExcersize_6421.csproj", "{F2B55B40-C7B9-4361-9A31-E8A382641B26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExcersize", "StringExcersize_2_10_1\StringExcersize.csproj", "{306DA593-5C1E-4E1F-8AD1-BC2F3217D9DB}"
 EndProject
