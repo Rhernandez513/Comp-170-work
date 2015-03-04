@@ -11,17 +11,19 @@ namespace IntroCS
         static void Main(string[] args)
         {
             TypeOfSentence();
-            for (int i = 0; i < 2; i++) // Loops twice so you don't have to run the program twice to see it works both ways
+            for (int i = 0; i < 2; i++)
             {
                 string userName = GetUserName();
                 NameReverse(userName);
             }
         }
-        //Gets initial string and decides on sentence type
+
+        // Gets initial string and decides on sentence type
         public static void TypeOfSentence()
         {
             string type, s = UIF.PromptLine("Please enter a sentence ");
-            Console.WriteLine("The length of the string is " + s.Length + " characters.");
+            Console.WriteLine("The length of the string is " + s.Length +
+                              " characters.");
             if (s.EndsWith("."))
             {
                 type = ("declarative");
@@ -40,13 +42,16 @@ namespace IntroCS
             }
             Console.WriteLine ("The sentence is " + type);
         }
-        //Gets user name from input
+
+        // Gets user name from input
         public static string GetUserName()
         {
-            string userInput = UIF.PromptLine("Please enter your first and last name on one line: ");
+            string userInput = UIF.PromptLine("Please enter your first and " +
+                                              "last name on one line: ");
             return userInput;
         }
-        //performs name reversal if space exists, if not no change
+
+        // Performs name reversal if space exists, if not no change
         public static void NameReverse(string userName)
         {
             int whitespace = userName.IndexOf(" ");
