@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LoopLab
 {
-    class Program
+    class LoopLab
     {
         static void Main(string[] args)
         {
