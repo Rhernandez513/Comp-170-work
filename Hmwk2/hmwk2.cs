@@ -6,8 +6,8 @@ namespace IntroCS
   {
     public static void Main (string[] args)
     {
-      Console.WriteLine("This Calculator will help you determine a grade in a "
-       + "given class.\n");
+      Console.WriteLine("This Calculator will help you determine a grade in a" +
+                       " given class.\n");
       double finalGradeRaw = GiveFinalGrade(getWeights(), getAverages());
       FinalMessage(GradeAssignment(finalGradeRaw), finalGradeRaw);
     }
@@ -22,7 +22,7 @@ namespace IntroCS
     public static double[] getWeights()
     {
       Console.WriteLine("Begin by entering individual category weights, they " +
-       "must add to 100%\n");
+                       "must add to 100%\n");
       double weightSum = 0;
       double[] weightValue = new double[5];
       do{
@@ -37,7 +37,7 @@ namespace IntroCS
           Console.WriteLine ("Congratulations! Weights add to 100%\n");
         } else{
             Console.WriteLine("Sorry weights did not add to 100%, please try " +
-             "again.\n");
+                             "again.\n");
           }
       }while(weightSum != 100);
       return weightValue;
@@ -47,7 +47,7 @@ namespace IntroCS
     public static double FindWeight(string weightPrompt)
     {
       double weight = UI.PromptDouble("Please enter the weight of " +
-       weightPrompt + "(s): ");
+                                     weightPrompt + "(s): ");
       return weight;
     }
 
@@ -67,12 +67,12 @@ namespace IntroCS
     public static double FindAverage(string gradePrompt)
     {
       double numberOfGrades = UI.PromptDouble("Please enter the number of " +
-       gradePrompt +  "(s) to grade: ");
+                                             gradePrompt +  "(s) to grade: ");
       double i = 1;
       double totalScore = 0;
       while (i <= numberOfGrades){
         double score = UI.PromptDouble("Please enter the grade of the " +
-         "assignment " + i + ": ");
+                                      "assignment " + i + ": ");
         i++;
         totalScore += score;
       };
@@ -89,8 +89,8 @@ namespace IntroCS
             multipliedVariables[i] = x[i] * y[i];
       }
       finalGrade = (multipliedVariables[0] + multipliedVariables[1] +
-       multipliedVariables[2] + multipliedVariables[3] + multipliedVariables[4])
-       /100;
+                    multipliedVariables[2] + multipliedVariables[3] +
+                    multipliedVariables[4])/100;
       return finalGrade;
     }
 

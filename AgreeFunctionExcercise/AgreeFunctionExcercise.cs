@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace IntroCS
 {
-    class TestAgree
+    class AgreeFunction
     {
-
+        /// Prompt the user with a question; Return true of false.
+        /// Allow certain starting characters for true (y, Y) and
+        /// others for false (n, N), and repeat until the response
+        /// is in one of these groups.
         public static void Main() //testing routine
         {
             Console.WriteLine(Agree("Do you understand? "));
         }
-
-        /// Prompt the user with a question; Return true of false.
-        /// Allow certain starting characters for true (t, y) and
-        /// others for false (f, n), and repeat until the response
-        /// is in one of these groups.
         static Boolean Agree(string question)
         {
             Console.WriteLine(question);
@@ -28,7 +26,7 @@ namespace IntroCS
                 Console.WriteLine("Bad Input! " + question);
                 answer = Console.ReadLine();
             }
-            return true;  // so stub compiles
+            return true;
         }
     }
 }
