@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LoopLab")]
+[assembly: AssemblyTitle("LoopExcersize_6421")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d0192966-f8ad-40b0-803d-a047ed7ee8c1")]
+[assembly: Guid("83491d73-f067-4015-b22d-8b570d1b4b42")]
 
 // Version information for an assembly consists of the following four values:
 //

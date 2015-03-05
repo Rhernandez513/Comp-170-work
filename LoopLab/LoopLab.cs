@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoopLab
+namespace IntroCS
 {
-    class Program
+    class LoopLab
     {
         static void Main(string[] args)
         {
