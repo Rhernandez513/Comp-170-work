@@ -40,7 +40,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeWholeNumberIntputExcerc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopExcersize_6421", "LoopExcersize_6421\LoopExcersize_6421.csproj", "{F2B55B40-C7B9-4361-9A31-E8A382641B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopLab", "LoopLab\LoopLab.csproj", "{2F9B6851-E395-48D3-89D9-F952156AB68C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopLab_Unfinished", "LoopLab\LoopLab_Unfinished.csproj", "{2F9B6851-E395-48D3-89D9-F952156AB68C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
