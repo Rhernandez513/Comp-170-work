@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopLab_Unfinished", "LoopL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavingsExcercise", "SavingsExcercise\SavingsExcercise.csproj", "{65B84EDF-B299-40E1-8250-4C9CE859978F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeSequenceExercise", "StrangeSequenceExercise\StrangeSequenceExercise.csproj", "{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -255,6 +257,16 @@ Global
 		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|x86.ActiveCfg = Release|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
