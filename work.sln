@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopExcersize_6421", "LoopE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopLab_Unfinished", "LoopLab\LoopLab_Unfinished.csproj", "{2F9B6851-E395-48D3-89D9-F952156AB68C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavingsExcercise", "SavingsExcercise\SavingsExcercise.csproj", "{65B84EDF-B299-40E1-8250-4C9CE859978F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +245,16 @@ Global
 		{2F9B6851-E395-48D3-89D9-F952156AB68C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2F9B6851-E395-48D3-89D9-F952156AB68C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2F9B6851-E395-48D3-89D9-F952156AB68C}.Release|x86.ActiveCfg = Release|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{65B84EDF-B299-40E1-8250-4C9CE859978F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
