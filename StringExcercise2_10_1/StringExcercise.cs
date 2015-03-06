@@ -2,18 +2,18 @@
 
 namespace IntroCS
 {
-    class StringExcersize
+  class StringExcersize
+  {
+    static void Main()
     {
-        static void Main()
-        {
-            string es;
-            es = "hola\n\n\nchico!";
-            Console.WriteLine(es);
-            es = @"hola
+      string es;
+      es = "hola\n\n\nchico!";
+      Console.WriteLine(es);
+      es = @"hola
 
 
 chico!";
-            Console.WriteLine(es);
-        }
+      Console.WriteLine(es);
     }
+  }
 }

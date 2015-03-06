@@ -4,7 +4,7 @@ namespace IntroCS
 {
   class MainClass
   {
-    public static void Main (string[] args)
+    public static void Main(string[] args)
     {
       Console.WriteLine("This Calculator will help you determine a grade in a" +
                        " given class.\n");
@@ -25,7 +25,8 @@ namespace IntroCS
                        "must add to 100%\n");
       double weightSum = 0;
       double[] weightValue = new double[5];
-      do{
+      do
+      {
         weightValue[0] = FindWeight("exam");
         weightValue[1] = FindWeight("project");
         weightValue[2] = FindWeight("lab");
@@ -33,13 +34,16 @@ namespace IntroCS
         weightValue[4] = FindWeight("participation point");
         weightSum = (weightValue[0] + weightValue[1] + weightValue[2] +
          weightValue[3] + weightValue[4]);
-        if (weightSum == 100) {
-          Console.WriteLine ("Congratulations! Weights add to 100%\n");
-        } else{
-            Console.WriteLine("Sorry weights did not add to 100%, please try " +
-                             "again.\n");
-          }
-      }while(weightSum != 100);
+        if (weightSum == 100)
+        {
+          Console.WriteLine("Congratulations! Weights add to 100%\n");
+        }
+        else
+        {
+          Console.WriteLine("Sorry weights did not add to 100%, please try " +
+                           "again.\n");
+        }
+      } while (weightSum != 100);
       return weightValue;
     }
 
@@ -54,12 +58,12 @@ namespace IntroCS
     //gets and assigns average grades of each category
     public static double[] getAverages()
     {
-      double[] averageValue = new double [5];
+      double[] averageValue = new double[5];
       averageValue[0] = FindAverage("exam");
       averageValue[1] = FindAverage("project");
       averageValue[2] = FindAverage("lab");
       averageValue[3] = FindAverage("homework assignment");
-      averageValue[4] = FindAverage ("participation point");
+      averageValue[4] = FindAverage("participation point");
       return averageValue;
     }
 
@@ -67,73 +71,87 @@ namespace IntroCS
     public static double FindAverage(string gradePrompt)
     {
       double numberOfGrades = UI.PromptDouble("Please enter the number of " +
-                                             gradePrompt +  "(s) to grade: ");
+                                             gradePrompt + "(s) to grade: ");
       double i = 1;
       double totalScore = 0;
-      while (i <= numberOfGrades){
+      while (i <= numberOfGrades)
+      {
         double score = UI.PromptDouble("Please enter the grade of the " +
                                       "assignment " + i + ": ");
         i++;
         totalScore += score;
       };
-       return totalScore / numberOfGrades;
+      return totalScore / numberOfGrades;
     }
 
     //computes final overall grade
-      public static double GiveFinalGrade(double[] x, double[] y)
+    public static double GiveFinalGrade(double[] x, double[] y)
     {
       double[] multipliedVariables = new double[5];
       double finalGrade;
       for (int i = 0; i < 4; i++)
       {
-            multipliedVariables[i] = x[i] * y[i];
+        multipliedVariables[i] = x[i] * y[i];
       }
       finalGrade = (multipliedVariables[0] + multipliedVariables[1] +
                     multipliedVariables[2] + multipliedVariables[3] +
-                    multipliedVariables[4])/100;
+                    multipliedVariables[4]) / 100;
       return finalGrade;
     }
 
     //calcs and assigns grade
     public static string GradeAssignment(double grade)
     {
-      if (grade == 100){
+      if (grade == 100)
+      {
         return ", an A+ ";
       }
-      else if (grade >= 93) {
+      else if (grade >= 93)
+      {
         return ", an A ";
       }
-      else if (grade >= 90) {
+      else if (grade >= 90)
+      {
         return ", an A- ";
       }
-      else if (grade >= 87) {
+      else if (grade >= 87)
+      {
         return ", a B+ ";
       }
-      else if (grade >= 83) {
+      else if (grade >= 83)
+      {
         return ", a B ";
       }
-      else if (grade >= 80) {
+      else if (grade >= 80)
+      {
         return ", a B- ";
       }
-      else if (grade >= 77) {
+      else if (grade >= 77)
+      {
         return ", a C+ ";
       }
-      else if (grade >= 73) {
+      else if (grade >= 73)
+      {
         return ", a C ";
       }
-      else if (grade >= 70) {
+      else if (grade >= 70)
+      {
         return ", a C- ";
       }
-      else if (grade >= 67) {
+      else if (grade >= 67)
+      {
         return ", a D+ ";
       }
-      else if (grade >= 63) {
+      else if (grade >= 63)
+      {
         return ", a D ";
       }
-      else if (grade >= 60) {
+      else if (grade >= 60)
+      {
         return ", a D- ";
       }
-      else {
+      else
+      {
         return ". It is so low that you are unlikely to pass ";
       }
     }

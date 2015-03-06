@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace IntroCS
 {
-    class LoopLab
+  class LoopLab
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-        }
     }
+  }
 }
