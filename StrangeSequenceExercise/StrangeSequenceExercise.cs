@@ -8,8 +8,7 @@ namespace IntroCS
 {
   class StrangeSequence
   {
-    /// Assume n is an integer.  If n is even, return n//2.
-    /// Otherwise (n is odd) return 3*n + 1.
+    // Single sequence jump
     static int Jump(int n)
     {
       int x = (n % 2);
@@ -23,20 +22,7 @@ namespace IntroCS
       }
       return n;
     }
-
-    /// Iterate the Jump function, starting with the positive
-    ///   integer value n, stopping when the latest value is 1.  
-    ///   Print each value.  Exanples:
-    ///
-    ///   PrintStrangeSequence(1) prints:
-    ///   1
-    ///   PrintStrangeSequence(5) prints:
-    ///   5
-    ///   16
-    ///   8
-    ///   4
-    ///   2
-    ///   1               */
+    // Iterates until 1, prints
     static void PrintStrangeSequence(int n)
     {
       while (n != 1)
@@ -45,20 +31,34 @@ namespace IntroCS
         Console.WriteLine(n);
       }
     }
-
-    /// Same idea as PrintStrangeSeq, but instead of
-    /// printing the whole sequence, just count the
-    /// number of entries.  For example,
-    ///   CountStrangeSequence(1) returns 1; 
-    ///   CountStrangeSequence(5) returns 6.
+    // Counts amount of jumps, yes i know its redundant
     static int CountStrangeSequence(int n)
     {
-      return 0;  // so stub compiles
+      for (int i = 1; n != 1; i++)
+      {
+        n = Jump(n);
+        if (n == 1)
+        {
+          return i;
+        }
+      }
+      return 0;
     }
 
-    static void Main() //testing routine
+    private static int GetUserInteger()
     {
-      int n = UIF.PromptInt("Enter a positive integer: ");
+      int n = UI.PromptInt("Enter a positive integer: ");
+      while (n <= 0)
+      {
+        Console.WriteLine("Not a positive integer.");
+        n = UI.PromptInt("Enter a positive integer: ");
+      }
+      return n;
+    }
+
+    static void Main()
+    {
+      int n = GetUserInteger();
       Console.WriteLine(n);
       Console.WriteLine("One jump from {0} is {1}.", n, Jump(n));
       Console.WriteLine("Sequence until 1:");
