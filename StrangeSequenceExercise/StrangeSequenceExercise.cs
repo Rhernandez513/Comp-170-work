@@ -17,13 +17,12 @@ namespace IntroCS
       {
         n = (n / 2);
       }
-      else if (x == 0)
+      else if (x == 1)
       {
         n = (3 * n + 1);
       }
       return n;
     }
-
 
     /// Iterate the Jump function, starting with the positive
     ///   integer value n, stopping when the latest value is 1.  
@@ -40,7 +39,11 @@ namespace IntroCS
     ///   1               */
     static void PrintStrangeSequence(int n)
     {
-      //complete
+      while (n != 1)
+      {
+        n = Jump(n);
+        Console.WriteLine(n);
+      }
     }
 
     /// Same idea as PrintStrangeSeq, but instead of
