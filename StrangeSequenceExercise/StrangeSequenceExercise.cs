@@ -12,7 +12,16 @@ namespace IntroCS
     /// Otherwise (n is odd) return 3*n + 1.
     static int Jump(int n)
     {
-      return 0; // so stub compiles
+      int x = (n % 2);
+      if (x == 0)
+      {
+        n = (n / 2);
+      }
+      else if (x == 0)
+      {
+        n = (3 * n + 1);
+      }
+      return n;
     }
 
 
