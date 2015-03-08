@@ -38,13 +38,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExcercise2_10_1", "St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeWholeNumberIntputExcercise", "SafeWholeNumberIntputExcercise\SafeWholeNumberIntputExcercise.csproj", "{7191ABC2-29F7-41C2-9F03-21378830A608}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopExcersize_6421", "LoopExcersize_6421\LoopExcersize_6421.csproj", "{F2B55B40-C7B9-4361-9A31-E8A382641B26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicateCharExercise", "LoopExcersize_6421\DuplicateCharExercise.csproj", "{F2B55B40-C7B9-4361-9A31-E8A382641B26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopLab_Unfinished", "LoopLab\LoopLab_Unfinished.csproj", "{2F9B6851-E395-48D3-89D9-F952156AB68C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavingsExcercise", "SavingsExcercise\SavingsExcercise.csproj", "{65B84EDF-B299-40E1-8250-4C9CE859978F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeSequenceExercise", "StrangeSequenceExercise\StrangeSequenceExercise.csproj", "{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoundoffExcercise2", "RoundoffExcercise2\RoundoffExcercise2.csproj", "{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -267,6 +269,16 @@ Global
 		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A77C6B4F-9D13-4DD6-93DA-8BBCF703A27D}.Release|x86.ActiveCfg = Release|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

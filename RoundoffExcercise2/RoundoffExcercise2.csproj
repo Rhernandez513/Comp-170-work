@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2B55B40-C7B9-4361-9A31-E8A382641B26}</ProjectGuid>
+    <ProjectGuid>{39EB2EEC-1A45-4F7D-9D51-D7E004A64D47}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IntroCS</RootNamespace>
-    <AssemblyName>LoopExcersize_6421</AssemblyName>
+    <AssemblyName>RoundoffExcercise2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoopExcersize_6421.cs" />
+    <Compile Include="RoundoffExcercise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntroCS
 {
-  class LoopExcersize_6421
+  class DuplicateCharExcercise
   {
     /// Checks if two consecutive characters in a string are the same
     static void Main(string[] args)
