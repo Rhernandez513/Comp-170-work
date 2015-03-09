@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IntroCS
-{
+{ /// No work done on this, does not work
   class RoundoffExcercise2
   {
     /// Return the largest possible number y, so in C#: x+y = x
