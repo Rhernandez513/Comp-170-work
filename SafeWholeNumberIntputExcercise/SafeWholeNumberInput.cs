@@ -42,7 +42,7 @@ namespace IntroCS
                 Console.WriteLine("Bad Input! Try again.");
                 userInput = UIF.PromptLine(prompt);
             }
-            return (int.Parse(userInput)); // so stub compiles:  FIX!
+            return (int.Parse(userInput));
         }
     }
 }
