@@ -33,13 +33,14 @@ namespace IntroCS
     {
       while (big != 0)
       {
-        Console.WriteLine("In this game you guess a positive number less than " +
+        Console.WriteLine("In this game you guess a positive number less than "+
                           big);
         Game(big);
         big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
       }
       Console.WriteLine("Ending Game, Goodbye!");
     }
+    // User must guess randomly generated number
     static void Game(int big)
     {
       int secretNumber = randomNumber(1, big);
@@ -68,18 +69,17 @@ namespace IntroCS
       int secret = r.Next(little, big);
       return secret;
     }
+    // Computer attempts to guess secret number
     static void GameReversed(int big)
     {
+      int little = 1;
       string prompt = ("\nImagine and remember a positive number, then press " + 
                        "return to continue.\n");
-      string highLowPrompt = ("\nAm I too high or too low?\n \nEnter H for High, L for " +
-                          "Low, E if Equal: ");
+      string highLowPrompt = ("\nAm I too high or too low?\n \nEnter H for " + 
+                               "High, L for Low, E if Equal: ");
 
       int computerGuessNumber = randomNumber(1, big);
-      int little = 1;
-
-      //string throwAwayString = 
-        UI.PromptLine(prompt);
+      UI.PromptLine(prompt);
       Console.WriteLine("Is your number {0}? ", computerGuessNumber);
       string numberCheck = UI.PromptLine(highLowPrompt);
       int i = 1;
@@ -107,7 +107,7 @@ namespace IntroCS
             break;
           }
         }
-        if ((big - little) == 1)
+        if (((big - little) == 1) || ((big - little) == 0) )
         {
           Console.WriteLine("I can tell you're cheating!");
           i++;
