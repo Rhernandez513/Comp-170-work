@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IntroCS
-{
+{ //test no change
   class StrangeSequence
   {
     // Single sequence jump
