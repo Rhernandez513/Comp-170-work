@@ -20,9 +20,11 @@ namespace IntroCS
       if (s.Contains(target))
       {
         int i = 0;
-        for (int next = s.IndexOf(target); target.Length < next; i++)
+        int next = (1 + s.IndexOf(target));
+        while (target.Length < next)
         {
           next = s.IndexOf(target, (next + target.Length));
+          i++;
         }
         return i;
       }
