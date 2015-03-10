@@ -1,6 +1,10 @@
 ﻿<Properties StartupItem="Hmwk2\Hmwk2.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hmwk1\hmwk1.cs">
+    <Files>
+      <File FileName="Hmwk1\hmwk1.cs" Line="2" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
