@@ -14,10 +14,11 @@ namespace IntroCS
       while (big != 0)
       {
         Console.WriteLine("In this game you guess a positive number less than "+
-                  big);
+                          big);
         Game(big);
+        big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
       }
-      Console.Write("Ending Game, Goodbye!");
+      Console.WriteLine("Ending Game, Goodbye!");
     }
     static void Game(int big)
     {
