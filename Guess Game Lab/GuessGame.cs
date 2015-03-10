@@ -10,10 +10,30 @@ namespace IntroCS
   {
     static void Main(string[] args)
     {
-      int big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
+      int choice = UI.PromptIntInRange("Do you want to guess? Enter 1:\n " + 
+                                       "Should I? Enter 0", 0, 1);
+      int big = UI.PromptInt("Enter a secret number upper limit (or zero to " + 
+                            "quit): ");
+      if (choice == 1) { StartGame(big); }
+      else if (choice == 0) { StartReversedGame(big); }      
+    }
+
+    private static void StartReversedGame(int big)
+    {
       while (big != 0)
       {
         Console.WriteLine("In this game you guess a positive number less than "+
+                          big);
+        GameReversed(big);
+        big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
+      }
+      Console.WriteLine("Ending Game, Goodbye!");
+    }
+    private static void StartGame(int big)
+    {
+      while (big != 0)
+      {
+        Console.WriteLine("In this game you guess a positive number less than " +
                           big);
         Game(big);
         big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
@@ -22,7 +42,7 @@ namespace IntroCS
     }
     static void Game(int big)
     {
-      int secretNumber = randomNumer(big);
+      int secretNumber = randomNumber(1, big);
       int userGuess = UI.PromptInt("Enter a guess: ");
       int i = 0;
       while (userGuess != secretNumber)
@@ -42,11 +62,60 @@ namespace IntroCS
       Console.WriteLine("Correct! You Win on guess {0}!", i);
     }
     // Assign random number to secret from 1 to big
-    private static int randomNumer(int big)
+    private static int randomNumber(int little, int big)
     {
       Random r = new Random();
-      int secret = r.Next(1, big);
+      int secret = r.Next(little, big);
       return secret;
+    }
+    static void GameReversed(int big)
+    {
+      string prompt = ("\nImagine and remember a positive number, then press " + 
+                       "return to continue.\n");
+      string highLowPrompt = ("\nAm I too high or too low?\n \nEnter H for High, L for " +
+                          "Low, E if Equal: ");
+
+      int computerGuessNumber = randomNumber(1, big);
+      int little = 1;
+
+      //string throwAwayString = 
+        UI.PromptLine(prompt);
+      Console.WriteLine("Is your number {0}? ", computerGuessNumber);
+      string numberCheck = UI.PromptLine(highLowPrompt);
+      int i = 1;
+      do
+      {
+        if (numberCheck == "H" || numberCheck == "h")
+        {
+          big = computerGuessNumber;
+          computerGuessNumber = randomNumber(little, big);
+          Console.Write("Is your number {0}? ", computerGuessNumber);
+          numberCheck = UI.PromptLine(highLowPrompt);
+          if (numberCheck == "E" || numberCheck == "e")
+          {
+            break;
+          }
+        }
+        else if (numberCheck == "L" || numberCheck == "l")
+        {
+          little = computerGuessNumber;
+          computerGuessNumber = randomNumber(little, big);
+          Console.Write("Is your number {0}? ", computerGuessNumber);
+          numberCheck = UI.PromptLine(highLowPrompt);
+          if (numberCheck == "E" || numberCheck == "e")
+          {
+            break;
+          }
+        }
+        if ((big - little) == 1)
+        {
+          Console.WriteLine("I can tell you're cheating!");
+          i++;
+          break;
+        }
+        i++;
+      } while (numberCheck != "E" && numberCheck != "e");
+      Console.WriteLine("I win! It took me {0} guesses.", i);
     }
   }
 }
