@@ -8,16 +8,19 @@ namespace IntroCS
 {
   class GuessGame
   {
-    static void Main(string[] args)
+    // Computer Gens random number, user guesses
+    private static void StartGame(int big)
     {
-      int choice = UI.PromptIntInRange("Do you want to guess? Enter 1:\n " + 
-                                       "Should I? Enter 0", 0, 1);
-      int big = UI.PromptInt("Enter a secret number upper limit (or zero to " + 
-                            "quit): ");
-      if (choice == 1) { StartGame(big); }
-      else if (choice == 0) { StartReversedGame(big); }      
+      while (big != 0)
+      {
+        Console.WriteLine("In this game you guess a positive number less than " +
+                          big);
+        Game(big);
+        big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
+      }
+      Console.WriteLine("Ending Game, Goodbye!");
     }
-
+    // User thinks of number, computer guesses
     private static void StartReversedGame(int big)
     {
       while (big != 0)
@@ -25,17 +28,6 @@ namespace IntroCS
         Console.WriteLine("In this game you guess a positive number less than "+
                           big);
         GameReversed(big);
-        big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
-      }
-      Console.WriteLine("Ending Game, Goodbye!");
-    }
-    private static void StartGame(int big)
-    {
-      while (big != 0)
-      {
-        Console.WriteLine("In this game you guess a positive number less than "+
-                          big);
-        Game(big);
         big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
       }
       Console.WriteLine("Ending Game, Goodbye!");
@@ -61,13 +53,6 @@ namespace IntroCS
         i++;
       }
       Console.WriteLine("Correct! You Win on guess {0}!", i);
-    }
-    // Assign random number to secret from 1 to big
-    private static int randomNumber(int little, int big)
-    {
-      Random r = new Random();
-      int secret = r.Next(little, big);
-      return secret;
     }
     // Computer attempts to guess secret number
     static void GameReversed(int big)
@@ -117,5 +102,22 @@ namespace IntroCS
       } while (numberCheck != "E" && numberCheck != "e");
       Console.WriteLine("I win! It took me {0} guesses.", i);
     }
+    // Assign random number to secret from 1 to big
+    private static int randomNumber(int little, int big)
+    {
+      Random r = new Random();
+      int secret = r.Next(little, big);
+      return secret;
+    }
+    static void Main(string[] args)
+    {
+      int choice = UI.PromptIntInRange("Do you want to guess? Enter 1:\n " +
+                                       "Should I? Enter 0", 0, 1);
+      int big = UI.PromptInt("Enter a secret number upper limit (or zero to " +
+                            "quit): ");
+      if (choice == 1) { StartGame(big); }
+      else if (choice == 0) { StartReversedGame(big); }
+    }
+
   }
 }
