@@ -38,7 +38,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExcercise2_10_1", "St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafeWholeNumberIntputExcercise", "SafeWholeNumberIntputExcercise\SafeWholeNumberIntputExcercise.csproj", "{7191ABC2-29F7-41C2-9F03-21378830A608}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicateCharExercise_unfinished", "LoopExcersize_6421\DuplicateCharExercise_unfinished.csproj", "{F2B55B40-C7B9-4361-9A31-E8A382641B26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuplicateCharExercise_unfinished", "DuplicateCharExercise\DuplicateCharExercise_unfinished.csproj", "{F2B55B40-C7B9-4361-9A31-E8A382641B26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopLab_Unfinished", "LoopLab\LoopLab_Unfinished.csproj", "{2F9B6851-E395-48D3-89D9-F952156AB68C}"
 EndProject
@@ -53,6 +53,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brute-Force GCD Exercise_unfinished", "Brute-Force GCD Exercise\Brute-Force GCD Exercise_unfinished.csproj", "{6A8429ED-4677-4F87-9DE8-A9EED72ECDBF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanTableExercise", "LoanTableExercise\LoanTableExercise.csproj", "{92D731BF-1391-430C-9685-3400A516BCA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guess Game Lab", "Guess Game Lab\Guess Game Lab.csproj", "{EF28818C-480C-4F7C-AF10-F97E3B3CA667}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -315,6 +317,16 @@ Global
 		{92D731BF-1391-430C-9685-3400A516BCA1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{92D731BF-1391-430C-9685-3400A516BCA1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{92D731BF-1391-430C-9685-3400A516BCA1}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EF28818C-480C-4F7C-AF10-F97E3B3CA667}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
