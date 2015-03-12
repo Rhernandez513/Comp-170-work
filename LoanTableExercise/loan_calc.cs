@@ -32,11 +32,11 @@ namespace IntroCS
     public static void LoanTable(decimal principal, decimal rate,
                                  decimal payment)
     {
-      Console.WriteLine("Number Principal   Interest    Payment");
+      Console.WriteLine("{0,7} {1,10} {2,9} {3,8}", "Number", "Principal", "Interest", "Payment");
       for (int i = 1; principal != 0; i++)
       {
         decimal interest = Math.Round(principal * rate, 2);
-        Console.WriteLine("{0}      {1:F2}   {2:F2}    {3:F2}", i, 
+        Console.WriteLine("{0,7} {1,10:F2} {2,9:F2} {3,8:F2}", i, 
                           principal, interest, payment);
         decimal newPrincipal = (principal + interest) - payment;
         if (principal < newPrincipal)
