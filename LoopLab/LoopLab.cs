@@ -33,15 +33,32 @@ namespace IntroCS
     /// Return a string containing n copies of s, end to end.
     /// For example StringOfReps("Ok", 9) returns: "OkOkOkOkOkOkOkOkOk"
     static string StringOfReps(string s, int n)
-    { // body
-      return "Not implemented";
+    {
+      string x = s;
+      for (int i = 1; i < n; i++)
+      {
+        x += s;
+      }
+      return x;
     }
     // Factorial chunk
     /// Return n! (n factorial: 1*2*3 *...* n if n >=1;
     /// 0! is 1.). For example Factorial(4) returns 1*2*3*4 = 24.
     static int Factorial(int n)
-    { // body
-      return 1; // so it compiles
+    {
+      int i = 1, q = 2;
+      while (i < n)
+      {
+          q *= i;
+          i++;     
+        if (i == n)
+        {
+          Console.WriteLine(n);
+          return q;
+        }
+      }
+      Console.WriteLine("if skipped");
+      return 0;
     }
     //PrintRectangle chunk
     // Print a filled rectange, where the filling is
