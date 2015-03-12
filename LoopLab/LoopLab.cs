@@ -54,11 +54,11 @@ namespace IntroCS
           i++;     
         if (i == n)
         {
-          Console.WriteLine(n);
+          Console.WriteLine(n); // delete when method complete
           return q;
         }
       }
-      Console.WriteLine("if skipped");
+      Console.WriteLine("if skipped"); // delete when method complete
       return 0;
     }
     //PrintRectangle chunk
