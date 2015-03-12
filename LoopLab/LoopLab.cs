@@ -46,6 +46,7 @@ namespace IntroCS
     /// 0! is 1.). For example Factorial(4) returns 1*2*3*4 = 24.
     static int Factorial(int n)
     {
+////////////////////////////////resume here, halfway through bullet 3
       int i = 1, q = 2;
       while (i < n)
       {
