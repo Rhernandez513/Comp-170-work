@@ -59,47 +59,47 @@ namespace IntroCS
     static void GameReversed(int big)
     {
       string prompt = ("\nImagine and remember a positive number, then press " +
-                       "return to continue.\n");
+                       "return to continue.");
       string highLowPrompt = ("\nEnter H for High, L for Low, E if Equal: ");
+      int i = 0, little = 1;
 
-      int computerGuessNumber = randomNumber(1, big);
+
       UI.PromptLine(prompt);
-      Console.WriteLine("Is your number {0}? ", computerGuessNumber);
-      string numberCheck = UI.PromptLine(highLowPrompt);
-
-      int i = 0;
-      int little = 1;
-      do
+      string numberCheck = "."; // = UI.PromptLine(highLowPrompt);
+      int computerGuessNumber = randomNumber(little, big);
+      //do
+      while (numberCheck != "E" && numberCheck != "e")
       {
-        if ((big - little) == 1 || (big - little) == 0 || big == 1 || little == 0)
+        Console.WriteLine("Is your number {0}? ", computerGuessNumber);
+        numberCheck = UI.PromptLine(highLowPrompt);
+        if ((big - little) == 1 || (big - little) == 0 || big == 1 )
         {
           Console.WriteLine("\nI can tell you're cheating!");
           i++;
           break;
         }
         i++;
-        if (numberCheck == "E" || numberCheck == "e")
-        {
-          break;
-        }
-        else if (numberCheck == "H" || numberCheck == "h")
+        /*if (numberCheck == "E" || numberCheck == "e")
+        //{
+        //  break;
+        //}
+        else*/ if (numberCheck == "H" || numberCheck == "h")
         {
           big = computerGuessNumber;
           computerGuessNumber = randomNumber(little, big);
-          Console.Write("Is your number {0}? ", computerGuessNumber);
+          //Console.Write("Is your number {0}? ", computerGuessNumber);
         }
         else if (numberCheck == "L" || numberCheck == "l")
         {
           little = computerGuessNumber;
           computerGuessNumber = randomNumber(little + 1, big);
-          Console.Write("Is your number {0}? ", computerGuessNumber);
+          //Console.Write("Is your number {0}? ", computerGuessNumber);
         }
         else
         {
           Console.WriteLine("\nInvalid Input! Try again: ");
         }
-        numberCheck = UI.PromptLine(highLowPrompt);
-      } while (numberCheck != "E" && numberCheck != "e");
+      }
       Console.WriteLine("\nI win! It took me {0} guesses.", i);
       PlayerChoice();
     }
