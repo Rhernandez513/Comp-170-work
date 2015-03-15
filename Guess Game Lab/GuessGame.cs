@@ -52,7 +52,7 @@ namespace IntroCS
         }
         i++;
       }
-      Console.WriteLine("Correct! You Win on guess {0}!", i);
+      Console.WriteLine("Correct! You Win on guess {0}!\n", i);
       PlayerChoice();
     }
     // Computer attempts to guess secret number
@@ -62,13 +62,14 @@ namespace IntroCS
                        "return to continue.");
       string highLowPrompt = ("\nEnter H for High, L for Low, E if Equal: ");
       int i = 0, little = 1;
-      UI.PromptLine(prompt);
       string numberCheck = "placeholder";
       int computerGuessNumber = randomNumber(little, big);
-      while (numberCheck != "E" && numberCheck != "e")
+      UI.PromptLine(prompt);
+
+      while (numberCheck != "e")
       {
         Console.WriteLine("Is your number {0}? ", computerGuessNumber);
-        numberCheck = UI.PromptLine(highLowPrompt);
+        numberCheck = (UI.PromptLine(highLowPrompt)).ToLower();
         if ((big - little) == 1 || (big - little) == 0 || big == 1)
         {
           Console.WriteLine("\nI can tell you're cheating!");
@@ -76,12 +77,12 @@ namespace IntroCS
           break;
         }
         i++;
-        if (numberCheck == "H" || numberCheck == "h")
+        if (numberCheck == "h")
         {
           big = computerGuessNumber;
           computerGuessNumber = randomNumber(little, big);
         }
-        else if (numberCheck == "L" || numberCheck == "l")
+        else if (numberCheck == "l")
         {
           little = computerGuessNumber;
           computerGuessNumber = randomNumber(little + 1, big);
@@ -110,8 +111,8 @@ namespace IntroCS
     {
       int choice = UI.PromptIntInRange("Do you want to guess, or Should I? " +
                                        "\nEnter", 0, 1);
-      int big = UI.PromptInt("\nEnter a secret number upper limit (or zero to " +
-                            "quit): ");
+      int big = UI.PromptInt("\nEnter a secret number upper limit (or zero " + 
+                             "to quit): ");
       if (choice == 1) { StartGame(big); }
       else if (choice == 0) { StartReversedGame(big); }
     }
