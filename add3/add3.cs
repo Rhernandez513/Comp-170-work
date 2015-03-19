@@ -2,7 +2,7 @@
 
 class add3
 {
-
+  ///prompts for 3 inputs, adds them, prints to console
   static void Main() // adding 3 numbers
   {
     string First, Second, Third;

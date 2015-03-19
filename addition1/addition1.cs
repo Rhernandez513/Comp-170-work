@@ -1,7 +1,7 @@
 using System;
 
 class Addition2
-{
+{///simply demonstrates passing variables
    static string SumProblemString(int x, int y)
    {
       int sum = x + y;
