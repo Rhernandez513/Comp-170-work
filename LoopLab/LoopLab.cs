@@ -19,8 +19,7 @@ namespace IntroCS
       PrintTableBorders(3, 2, 4, 1);
       PrintTableBorders(2, 1, 6, 3);
     }
-    // PrintReps chunk
-    /// Print n copies of s, end to end.
+        /// Print n copies of s, end to end.
     /// For example PrintReps("Ok", 9) prints: OkOkOkOkOkOkOkOkOk
     static void PrintReps(string s, int n)
     {
@@ -29,7 +28,6 @@ namespace IntroCS
         Console.Write(s);
       }
     }
-    //StringOfReps chunk
     /// Return a string containing n copies of s, end to end.
     /// For example StringOfReps("Ok", 9) returns: "OkOkOkOkOkOkOkOkOk"
     static string StringOfReps(string s, int n)
@@ -46,20 +44,18 @@ namespace IntroCS
     /// 0! is 1.). For example Factorial(4) returns 1*2*3*4 = 24.
     static int Factorial(int n)
     {
-////////////////////////////////resume here, halfway through bullet 3
-      int i = 1, q = 2;
-      while (i < n)
+      int q = 1;
+      for (int i = 2; i <= n; i++)
       {
-          q *= i;
-          i++;     
-        if (i == n)
+        q *= i;
+        if (q <= 0)
         {
-          Console.WriteLine(n); // delete when method complete
-          return q;
+          Console.WriteLine("Value of N is too high!");
+          //keep testing, highest reps is 17 for n value
         }
       }
-      Console.WriteLine("if skipped"); // delete when method complete
-      return 0;
+      return q;
+      ////////////////////////////////resume here, halfway through bullet 3
     }
     //PrintRectangle chunk
     // Print a filled rectange, where the filling is
