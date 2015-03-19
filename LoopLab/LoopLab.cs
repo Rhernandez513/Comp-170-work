@@ -42,20 +42,25 @@ namespace IntroCS
     // Factorial chunk
     /// Return n! (n factorial: 1*2*3 *...* n if n >=1;
     /// 0! is 1.). For example Factorial(4) returns 1*2*3*4 = 24.
-    static int Factorial(int n)
+    static long Factorial(int n)
     {
-      int q = 1;
-      for (int i = 2; i <= n; i++)
+      if (n == 0)
+      {
+        return 0;
+      }
+      long q = 1;
+      long zero = 0;
+      for (long i = 2; i < n; i++)
       {
         q *= i;
-        if (q <= 0)
+        if (q <= zero)
         {
           Console.WriteLine("Value of N is too high!");
-          //keep testing, highest reps is 17 for n value
+          Console.WriteLine("Only {0} repetitions for Factorial", (i));
+          break;
         }
       }
       return q;
-      ////////////////////////////////resume here, halfway through bullet 3
     }
     //PrintRectangle chunk
     // Print a filled rectange, where the filling is
