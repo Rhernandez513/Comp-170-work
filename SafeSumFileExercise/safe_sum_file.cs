@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-/// incomplete
+/// work in progress, needs to be tested with an actual file at this point and debugged.
 
 
 //to do instructions
@@ -23,16 +23,29 @@ namespace IntroCS
   {
     static void Main()
     {
+      string filename = UserPrompt();
+      if (filename == "quit")
+      {
+        Console.WriteLine("No input given, program will now close.");
+        return;
+      }
+      Console.WriteLine("The sum is {0}", CalcSum(filename));
+    }
+
+    private static string UserPrompt()
+    {
       string filename = UI.PromptLine(
       "Enter the name of a file of integers: ");
-      if (File.Exists(filename))
+      if (filename == "")
       {
-        Console.WriteLine("The sum is {0}", CalcSum(filename));
+        return "quit";
       }
-      else
+      while (!File.Exists(filename))
       {
         Console.WriteLine("Bad file name {0}", filename);
+        filename = UserPrompt();
       }
+      return filename;
     }
     /// Read the named file and
     /// return the sum of an int
