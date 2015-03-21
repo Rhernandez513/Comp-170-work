@@ -74,7 +74,27 @@ namespace IntroCS
     static void PrintRectangle(int columns, int rows,
     char inChar, char edgeChar)
     { // body
-      Console.WriteLine("Not implemented");
+      for (int reps = 0; reps < 2; reps++)
+      {
+        for (int borders = 0; borders < (columns + 2); borders++)
+        {
+          Console.Write(edgeChar);
+        }
+        Console.WriteLine();
+        if (reps == 1)
+        {
+          return;
+        }
+        for (int x = 0; x < rows; x++)
+        {
+          Console.Write(edgeChar);
+          for (int i = 0; i < columns; i++)
+          {
+            Console.Write(inChar);
+          }
+          Console.Write(edgeChar + "\n");
+        }
+      }
     }
     //PrintTableBorders chunk
     /// Print the borders of the cells of a table.
