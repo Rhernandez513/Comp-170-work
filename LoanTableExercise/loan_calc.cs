@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace IntroCS
 {
   class loan_calc
-  { /// Print a loan table, showing payment number, principal at the
+  { 
+    /// Print a loan table, showing payment number, principal at the
     /// beginning of the payment period, interest over the period, and
     /// payment at the end of the period.
     /// The principal is the initial amount of the loan.
