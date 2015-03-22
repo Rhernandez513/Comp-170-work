@@ -17,9 +17,9 @@ namespace IntroCS
       PrintRectangle(5, 1, ' ', 'B');
       PrintRectangle(0, 2, '-', '+');
       PrintTableBorders(3, 2, 4, 1);
-      PrintTableBorders(2, 1, 6, 3);
+      //PrintTableBorders(2, 1, 6, 3);
     }
-        /// Print n copies of s, end to end.
+    /// Print n copies of s, end to end.
     /// For example PrintReps("Ok", 9) prints: OkOkOkOkOkOkOkOkOk
     static void PrintReps(string s, int n)
     {
@@ -109,10 +109,23 @@ namespace IntroCS
     /// +----+----+----+
     /// | | | |
     /// +----+----+----+
-    static void PrintTableBorders(int columns, int rows,
-    int width, int height)
-    { // body
-      Console.WriteLine("Extra Credit Not implemented");
+    static void PrintTableBorders(int columns, int rows, int width, int height)
+    {
+      string[] symbols = new string[] { "+", "-", "|", " " };
+
+      for (int i = 0; i < columns; i++)
+      {
+        Console.Write(symbols[0] + StringOfReps(symbols[1], width));
+      }
+      Console.WriteLine(symbols[0]);
+      for (int k = 0; k < rows; k++) 
+      {
+        for (int i = 0; i < columns; i++)
+        {
+          Console.Write(symbols[2] + StringOfReps(symbols[3], width));
+        }
+        Console.WriteLine(symbols[2]);
+      }
     }
   }
 }
