@@ -58,8 +58,9 @@ namespace gradecalc
         Console.WriteLine ( "Enter Participation Grade: ");
         ParticipationGradeString = Console.ReadLine();
         ParticipationGrade = double.Parse(ParticipationGradeString);
-          //whats going on here?
-          + ParticipationWeight * ParticipationGrade) / 100.00);
+
+      double grade = ((ExamsWeight * ExamsGrade) + (LabsWeight * LabsGrade) + (HomeworkWeight * HomeworkGrade) + (ProjectGrade * ProjectWeight) + (ParticipationGrade * ParticipationWeight)) / 100 ;
+
 
         string GradeLetter = "Undefined";
 
