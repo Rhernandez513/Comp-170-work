@@ -17,7 +17,7 @@ namespace IntroCS
       PrintRectangle(5, 1, ' ', 'B');
       PrintRectangle(0, 2, '-', '+');
       PrintTableBorders(3, 2, 4, 1);
-      //PrintTableBorders(2, 1, 6, 3);
+      PrintTableBorders(2, 1, 6, 3);
     }
     /// Print n copies of s, end to end.
     /// For example PrintReps("Ok", 9) prints: OkOkOkOkOkOkOkOkOk
@@ -105,26 +105,39 @@ namespace IntroCS
     /// are vertical bars, '|', except that all intersections are '+'.
     /// For example PrintTableBorders(3, 2, 4, 1) prints
     /// +----+----+----+
-    /// | | | |
+    /// |    |    |    |
     /// +----+----+----+
-    /// | | | |
+    /// |    |    |    |
     /// +----+----+----+
     static void PrintTableBorders(int columns, int rows, int width, int height)
     {
       string[] symbols = new string[] { "+", "-", "|", " " };
 
-      for (int i = 0; i < columns; i++)
+      for (int r = 0; r <= rows; r++)
       {
-        Console.Write(symbols[0] + StringOfReps(symbols[1], width));
-      }
-      Console.WriteLine(symbols[0]);
-      for (int k = 0; k < rows; k++) 
-      {
+        // Crosses & dashes
         for (int i = 0; i < columns; i++)
         {
-          Console.Write(symbols[2] + StringOfReps(symbols[3], width));
+          Console.Write(symbols[0] + StringOfReps(symbols[1], width));
+          if (i == (columns - 1))
+          {
+            Console.WriteLine(symbols[0]);
+          }
         }
-        Console.WriteLine(symbols[2]);
+        // Skipped on last pass of loop
+        if (r != rows)
+        {
+          // Row height
+          for (int k = 0; k < height; k++)
+          {
+            // Bars & spaces
+            for (int i = 0; i < columns; i++)
+            {
+              Console.Write(symbols[2] + StringOfReps(symbols[3], width));
+            }
+            Console.WriteLine(symbols[2]);
+          }
+        }
       }
     }
   }
