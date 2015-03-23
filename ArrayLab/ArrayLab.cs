@@ -7,19 +7,28 @@ namespace IntroCS
 
     // Link to lab, http://introcs.cs.luc.edu/html/lab-array1d.html?highlight=printnums
     public static void Main()
-    { /// Include test:. Display test input and output 
+    { /// Include test:. Display test input and output
       /// with liberal use of PrintInts,
       /// showing labeled inputs and outputs.
+      int[] a = new int[] { 1, 2, 3, 4 };
+      int[] b = new int[] { 5, 6, 7, 8 };
+      string prompt = "prompt";
+      ReadInts(prompt, 3);
 
     }
     //PrintInts chunk
     /// Print label and then each element preceeded by a space,
     ///  all across one line.  Example:
     ///  If a contains {3, -1, 5} and label is "Nums:",
-    ///  print:   Nums: 3 -1 5                   
+    ///  print:   Nums: 3 -1 5
     static void PrintInts(string label, int[] a)
     {
-
+      Console.Write(label);
+      for(int i = 0; i < a.Length; i++)
+      {
+        Console.Write(" " + a[i]);
+      }
+      Console.WriteLine();
     }
     //ReadInts chunk
     ///  Prompt the user to enter n integers, and
@@ -30,45 +39,89 @@ namespace IntroCS
     ///      1: 5
     ///      2: 7
     ///      3: -1
-    ///  and the function would return an array containing {5, 7, -1}. 
+    ///  and the function would return an array containing {5, 7, -1}.
     ///  Note the format of the prompts for individual elements.
     static int[] ReadInts(string prompt, int n)
     {
-      return new int[0]; // so stub compiles
+      int[] a = new int[n];
+      n = UI.PromptInt(prompt + " (" + n + ")");
+      for(int i = 0; i < n; i++)
+      {
+        a[i] = UI.PromptInt(""+ (i + 1) + ": ");
+      }
+      PrintInts("ReadInts test: ", a);
+      return a;
     }
     //Minimum chunk
     ///  Return the minimum value in a.
-    ///  Example: If a contains {5, 7, 4, 9}, return 4. 
+    ///  Example: If a contains {5, 7, 4, 9}, return 4.
     ///  Assume a contains at least one value.
     static int Minimum(int[] a)
     {
-      return 0; // so stub compiles
+      int min = a[0], i = 0; 
+      while (i < a.Length)
+      {
+        if (a[i] < min)
+        {
+          min = a[i];
+        }
+        i++;
+      }
+      Console.WriteLine("Minimum test: ", min);
+      return min;
     }
     //CountEven chunk
     ///  Return the number of even values in a.
-    ///  Example: If a contains {-4, 7, 6, 12, 9}, return 3. 
+    ///  Example: If a contains {-4, 7, 6, 12, 9}, return 3.
     static int CountEven(int[] a)
     {
-      return 0; // so stub compiles
+      int i = 0;
+      foreach(int k in a)
+      {
+        if(k%2 == 0)
+        {
+          i++;
+        }
+      }
+      Console.WriteLine("CountEven test: " + i);
+      return i; // so stub compiles
     }
     //PairwiseAdd chunk
     ///  Add corresponding elements of a and b and place them in sum.
     ///  Assume all arrays have the same Length.
     ///  Example: If a contains {2, 4, 6} and b contains {7, -1, 8}
-    ///  then at the end sum should contain {9, 3, 14}. 
+    ///  then at the end sum should contain {9, 3, 14}.
     static void PairwiseAdd(int[] a, int[] b, int[] sum)
     {
-
+      for(int i = 0; i < a.Length && i < b.Length; i++)
+      {
+        sum[i] = a[i] + b[i];
+      }
+      PrintInts("PairwisAdd test", sum);
     }
     //NewPairwiseAdd chunk
     ///  Return a new array whose elements are the sums of the
     ///  corresponding elements of a and b.
     ///  Assume a and b have the same Length.
     ///  Example: If a contains {2, 4, 6} and b contains {3, -1, 5}
-    ///  then return an array containing {5, 3, 11}. 
+    ///  then return an array containing {5, 3, 11}.
     static int[] NewPairwiseAdd(int[] a, int[] b)
     {
-      return new int[0]; // so stub compiles
+      if (a.Length != b.Length)
+      {
+        Console.WriteLine("Arrays are not matching sizes.");
+        return null;
+      }
+      else
+      {
+        int[] sum = new int[a.Length];
+        for(int i = 0; i < a.Length && i < b.Length; i++)
+        {
+          sum[i] = a[i] + b[i];
+        }
+        PrintInts("NewPairwisAdd test", sum);
+        return sum;
+      }
     }
     //IsAscending chunk
     ///  Return true if the numbers are sorted in increasing order,
@@ -77,10 +130,31 @@ namespace IntroCS
     ///  Return false otherwise.  Assume an array with fewer than
     ///  two elements is ascending.
     ///  Examples: If a contains {2, 5, 5, 8}, return true;
-    ///  if a contains {2, 5, 3, 8}, return false. 
+    ///  if a contains {2, 5, 3, 8}, return false.
     static bool IsAscending(int[] a)
     {
-      return false; // so stub compiles
+      if(a.Length > 1)
+      { // Checks each pair, avoid out of range exception
+        for(int i = 0; i < (a.Length - 1); i++)
+        {
+          if(a[i] < a[i+1])
+          {
+            continue;
+          }
+          else
+          {
+            return false;
+          }
+        }
+        // Check finishes, return true
+        PrintInts("IsAscending test: ", a);
+        return true;
+      }
+      else
+      {
+        Console.WriteLine("Nothing to compare.");
+        return false;
+      }
     }
     //PrintAscendingValues chunk
     ///  Print an ascending sequence from the elements
@@ -88,20 +162,39 @@ namespace IntroCS
     ///  the next number after the previous number
     ///  that is at least as large as the previous one printed.
     ///  Example: If a contains {5, 2, 8, 4, 8, 11, 6, 7, 10},
-    ///  print:  5 8 8 11      
+    ///  print:  5 8 8 11
     static void PrintAscendingValues(int[] a)
     {
-
+      int arrayVal = int.MinValue, count = 0;
+      for(int i = 0; i < a.Length; i++)
+      {
+        if(a[i] >= arrayVal)
+        {
+          arrayVal = a[i];
+          count++;
+        }
+      }
+      int[] ascendingArray = new int[count];
+      int y = 0;
+      for(int z = 0; z < count; z++)
+      {
+        if (y <= a[z])
+        {
+          y = a[z];
+          ascendingArray[z] = a[z];
+        }
+      }
+      PrintInts("PrintAscendingValues test: ", ascendingArray);
     }
     //PrintRuns chunk
     ///  Prints each ascending run in a, one run per line.
     ///  Example: If a contains {2, 5, 8, 3, 9, 9, 8}, print
     ///  2 5 8
     ///  3 9 9
-    ///  8          
+    ///  8
     static void PrintRuns(int[] a)
     {
 
     }
-  }                                              // end PrintRuns chunk   
+  }                                              // end PrintRuns chunk
 }
