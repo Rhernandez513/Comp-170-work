@@ -72,6 +72,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "addition3", "addition3\addi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sum_file", "sum_file\sum_file.csproj", "{86BB81CE-97EC-4F9C-AD67-3492F53F71B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hmwk3", "Hmwk3\Hmwk3.csproj", "{47732F5B-05C8-44BA-880A-7541B72DA724}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -427,6 +429,16 @@ Global
 		{86BB81CE-97EC-4F9C-AD67-3492F53F71B8}.Release|Mixed Platforms.Build.0 = Release|x86
 		{86BB81CE-97EC-4F9C-AD67-3492F53F71B8}.Release|x86.ActiveCfg = Release|x86
 		{86BB81CE-97EC-4F9C-AD67-3492F53F71B8}.Release|x86.Build.0 = Release|x86
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{47732F5B-05C8-44BA-880A-7541B72DA724}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
