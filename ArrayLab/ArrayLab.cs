@@ -4,6 +4,8 @@ namespace IntroCS
 {
   public class ArrayLab
   {
+
+    // Link to lab, http://introcs.cs.luc.edu/html/lab-array1d.html?highlight=printnums
     public static void Main()
     { /// Include test:. Display test input and output 
       /// with liberal use of PrintInts,
