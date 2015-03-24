@@ -4,13 +4,12 @@ namespace IntroCS
 {
   public class ArrayLab
   {
-
     // Link to lab, http://introcs.cs.luc.edu/html/lab-array1d.html?highlight=printnums
     public static void Main()
     { /// Include test:. Display test input and output
       /// with liberal use of PrintInts,
       /// showing labeled inputs and outputs.
-      int[] a = new int[] { 1, 2, 3, 4 };
+      int[] a = new int[] { 1, 2, 1, 3 };
       int[] b = new int[] { 5, 6, 7, 8 };
       int[] c = new int[] { 9, 10, 11, 12 };
       int[] d = new int[] { 2, 5, 8, 3, 9, 9, 8 };
@@ -34,7 +33,7 @@ namespace IntroCS
     static void PrintInts(string label, int[] a)
     {
       Console.Write(label);
-      for(int i = 0; i < a.Length; i++)
+      for (int i = 0; i < a.Length; i++)
       {
         Console.Write(" " + a[i]);
       }
@@ -55,9 +54,9 @@ namespace IntroCS
     {
       int[] a = new int[n];
       Console.WriteLine(prompt + " (" + n + ")");
-      for(int i = 0; i < n; i++)
+      for (int i = 0; i < n; i++)
       {
-        a[i] = UI.PromptInt(""+ (i + 1) + ": ");
+        a[i] = UI.PromptInt("" + (i + 1) + ": ");
       }
       PrintInts("ReadInts test: ", a);
       return a;
@@ -86,9 +85,9 @@ namespace IntroCS
     static int CountEven(int[] a)
     {
       int i = 0;
-      foreach(int k in a)
+      foreach (int k in a)
       {
-        if(k%2 == 0)
+        if (k % 2 == 0)
         {
           i++;
         }
@@ -103,7 +102,7 @@ namespace IntroCS
     ///  then at the end sum should contain {9, 3, 14}.
     static void PairwiseAdd(int[] a, int[] b, int[] sum)
     {
-      for(int i = 0; i < a.Length && i < b.Length; i++)
+      for (int i = 0; i < a.Length && i < b.Length; i++)
       {
         sum[i] = a[i] + b[i];
       }
@@ -125,7 +124,7 @@ namespace IntroCS
       else
       {
         int[] sum = new int[a.Length];
-        for(int i = 0; i < a.Length && i < b.Length; i++)
+        for (int i = 0; i < a.Length && i < b.Length; i++)
         {
           sum[i] = a[i] + b[i];
         }
@@ -143,11 +142,11 @@ namespace IntroCS
     ///  if a contains {2, 5, 3, 8}, return false.
     static bool IsAscending(int[] a)
     {
-      if(a.Length > 1)
+      if (a.Length > 1)
       { // Checks each pair, avoid out of range exception
-        for(int i = 0; i < (a.Length - 1); i++)
+        for (int i = 0; i < (a.Length - 1); i++)
         {
-          if(a[i] < a[i+1])
+          if (a[i] < a[i + 1])
           {
             continue;
           }
@@ -176,9 +175,9 @@ namespace IntroCS
     static void PrintAscendingValues(int[] a)
     {
       int arrayVal = int.MinValue, count = 0;
-      for(int i = 0; i < a.Length; i++)
+      for (int i = 0; i < a.Length; i++)
       { // Counts each value greater than the last
-        if(a[i] >= arrayVal)
+        if (a[i] >= arrayVal)
         {
           arrayVal = a[i];
           count++;
@@ -186,7 +185,7 @@ namespace IntroCS
       }
       int[] ascendingArray = new int[count];
       int y = int.MinValue;
-      for(int z = 0; z < count; z++)
+      for (int z = 0; z < count; z++)
       {
         if (y <= a[z])
         {
@@ -196,32 +195,36 @@ namespace IntroCS
       }
       PrintInts("PrintAscendingValues test: ", ascendingArray);
     }
-    //PrintRuns chunk
-    ///  Prints each ascending run in a, one run per line.
-    ///  Example: If a contains {2, 5, 8, 3, 9, 9, 8}, print
-    ///  2 5 8
-    ///  3 9 9
-    ///  8
+    /// <summary>
+    /// Prints each ascending run in a, one run per line.
+    /// Example: If a contains {2, 5, 8, 3, 9, 9, 8}, print
+    /// 2 5 8
+    /// 3 9 9
+    /// </summary>
+    /// <param name="a">Array to check</param>
     static void PrintRuns(int[] a)
     {
-      int innerCount = 1;
-      for (int k = 0, runStart = 0, runEnd = 0; runStart < a.Length; k++)
+      for (int k = 1, runStart = 0, runEnd = 0; runStart <= a.Length; k++)
       {
-        for (int i = 0; i < a.Length; i++)
+        int innerCount = 1;
+        if (runStart == (a.Length))
         {
-          if (a[i] <= a[i + 1])
+          Console.WriteLine("Run #" + k + ":" + a[runStart-1]);
+          return;
+        }
+        for (int i = k; i < a.Length; i++)
+        {
+          if (a[i - 1] <= a[i])
           {
             innerCount++;
           }
-          else 
+          else
           {
-            runEnd = innerCount - 1;
-            innerCount++;
             break;
           }
         }
-        int[] run = new int[runEnd];
-        Console.WriteLine("inner: {0} end: {1}", runStart, runEnd);
+        runEnd = innerCount + runStart;
+        //int[] run = new int[runEnd];
         PrintInts("Run #" + k, (ReturnInts(a, runStart, runEnd)));
         runStart = runEnd + 1;
       }
@@ -235,17 +238,22 @@ namespace IntroCS
     /// <returns></returns>
     static int[] ReturnInts(int[] a, int start, int end)
     {
-      int length = end - start + 1;
-      int[] n = new int[length];
+      int length;
+      if (start == 0)
+      {
+        length = end - start;
+      }
+      else
+      {// I know this looks weird, it works
+        length = end - start + 1;
+        start -= 1;
+      }
+      int[] newAscendingArray = new int[length];
       for (int i = start, x = 0; i < end; i++, x++)
       {
-        Console.WriteLine("n length = " + n.Length);
-        Console.WriteLine("x = " + x);
-        Console.WriteLine("a length" + a.Length);
-        Console.WriteLine("i = " + i);
-        n[x] = a[i];
+        newAscendingArray[x] = a[i];
       }
-        return n;
+      return newAscendingArray;
     }
-  } 
+  }
 }
