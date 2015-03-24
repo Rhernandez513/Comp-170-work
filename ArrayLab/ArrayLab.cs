@@ -12,9 +12,16 @@ namespace IntroCS
       /// showing labeled inputs and outputs.
       int[] a = new int[] { 1, 2, 3, 4 };
       int[] b = new int[] { 5, 6, 7, 8 };
+      int[] c = new int[] { 9, 10, 11, 12 };
       string prompt = "prompt";
+      string label = "label";
+      PrintInts(label, a);
       ReadInts(prompt, 3);
-
+      Minimum(a);
+      CountEven(a);
+      PairwiseAdd(a, b, c);
+      NewPairwiseAdd(a, b);
+      IsAscending(a);
     }
     //PrintInts chunk
     /// Print label and then each element preceeded by a space,
@@ -44,7 +51,7 @@ namespace IntroCS
     static int[] ReadInts(string prompt, int n)
     {
       int[] a = new int[n];
-      n = UI.PromptInt(prompt + " (" + n + ")");
+      Console.WriteLine(prompt + " (" + n + ")");
       for(int i = 0; i < n; i++)
       {
         a[i] = UI.PromptInt(""+ (i + 1) + ": ");
@@ -67,7 +74,7 @@ namespace IntroCS
         }
         i++;
       }
-      Console.WriteLine("Minimum test: ", min);
+      Console.WriteLine("Minimum test: " + min);
       return min;
     }
     //CountEven chunk
@@ -84,7 +91,7 @@ namespace IntroCS
         }
       }
       Console.WriteLine("CountEven test: " + i);
-      return i; // so stub compiles
+      return i;
     }
     //PairwiseAdd chunk
     ///  Add corresponding elements of a and b and place them in sum.
@@ -147,7 +154,7 @@ namespace IntroCS
           }
         }
         // Check finishes, return true
-        PrintInts("IsAscending test: ", a);
+        PrintInts("IsAscending test passed. Array tested: ", a);
         return true;
       }
       else
