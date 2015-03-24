@@ -13,6 +13,7 @@ namespace IntroCS
       int[] a = new int[] { 1, 2, 3, 4 };
       int[] b = new int[] { 5, 6, 7, 8 };
       int[] c = new int[] { 9, 10, 11, 12 };
+      int[] d = new int[] { 2, 5, 8, 3, 9, 9, 8 };
       string prompt = "prompt";
       string label = "label";
       PrintInts(label, a);
@@ -22,6 +23,8 @@ namespace IntroCS
       PairwiseAdd(a, b, c);
       NewPairwiseAdd(a, b);
       IsAscending(a);
+      Console.WriteLine("PrintRuns Test: ");
+      PrintRuns(d);
     }
     //PrintInts chunk
     /// Print label and then each element preceeded by a space,
@@ -201,6 +204,48 @@ namespace IntroCS
     ///  8
     static void PrintRuns(int[] a)
     {
+      int innerCount = 1;
+      for (int k = 0, runStart = 0, runEnd = 0; runStart < a.Length; k++)
+      {
+        for (int i = 0; i < a.Length; i++)
+        {
+          if (a[i] <= a[i + 1])
+          {
+            innerCount++;
+          }
+          else 
+          {
+            runEnd = innerCount - 1;
+            innerCount++;
+            break;
+          }
+        }
+        int[] run = new int[runEnd];
+        Console.WriteLine("inner: {0} end: {1}", runStart, runEnd);
+        PrintInts("Run #" + k, (ReturnInts(a, runStart, runEnd)));
+        runStart = runEnd + 1;
+      }
     }
-  }                                              // end PrintRuns chunk
+    /// <summary>
+    /// Returns an array of ints from specified indices
+    /// </summary>
+    /// <param name="a">Parent array to check</param>
+    /// <param name="start">First index to check</param>
+    /// <param name="end">Last index to check</param>
+    /// <returns></returns>
+    static int[] ReturnInts(int[] a, int start, int end)
+    {
+      int length = end - start + 1;
+      int[] n = new int[length];
+      for (int i = start, x = 0; i < end; i++, x++)
+      {
+        Console.WriteLine("n length = " + n.Length);
+        Console.WriteLine("x = " + x);
+        Console.WriteLine("a length" + a.Length);
+        Console.WriteLine("i = " + i);
+        n[x] = a[i];
+      }
+        return n;
+    }
+  } 
 }
