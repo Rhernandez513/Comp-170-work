@@ -65,7 +65,7 @@ namespace IntroCS
     ///  Assume a contains at least one value.
     static int Minimum(int[] a)
     {
-      int min = a[0], i = 0; 
+      int min = a[0], i = 0;
       while (i < a.Length)
       {
         if (a[i] < min)
@@ -174,7 +174,7 @@ namespace IntroCS
     {
       int arrayVal = int.MinValue, count = 0;
       for(int i = 0; i < a.Length; i++)
-      {
+      { // Counts each value greater than the last
         if(a[i] >= arrayVal)
         {
           arrayVal = a[i];
@@ -182,7 +182,7 @@ namespace IntroCS
         }
       }
       int[] ascendingArray = new int[count];
-      int y = 0;
+      int y = int.MinValue;
       for(int z = 0; z < count; z++)
       {
         if (y <= a[z])
@@ -201,7 +201,6 @@ namespace IntroCS
     ///  8
     static void PrintRuns(int[] a)
     {
-
     }
   }                                              // end PrintRuns chunk
 }
