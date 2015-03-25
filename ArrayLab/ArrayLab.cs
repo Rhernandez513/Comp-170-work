@@ -209,10 +209,10 @@ namespace IntroCS
         int innerCount = 1;
         if (runStart == (a.Length))
         {
-          Console.WriteLine("Run #" + k + ":" + a[runStart-1]);
+          Console.WriteLine("Run #" + k + ":" + a[a.Length - 1]);
           return;
         }
-        for (int i = k; i < a.Length; i++)
+        for (int i = runStart + 1; i < a.Length; i++)
         {
           if (a[i - 1] <= a[i])
           {
@@ -220,11 +220,10 @@ namespace IntroCS
           }
           else
           {
+            runEnd = innerCount + runStart;
             break;
           }
         }
-        runEnd = innerCount + runStart;
-        //int[] run = new int[runEnd];
         PrintInts("Run #" + k, (ReturnInts(a, runStart, runEnd)));
         runStart = runEnd + 1;
       }
@@ -243,10 +242,14 @@ namespace IntroCS
       {
         length = end - start;
       }
+      // I know this looks weird, it works
+      // length is used to assgin a length value
+      // end and start are indicies
+      // 
       else
-      {// I know this looks weird, it works
-        length = end - start + 1;
-        start -= 1;
+      {
+        length = (end - start) + 1;
+        start--;
       }
       int[] newAscendingArray = new int[length];
       for (int i = start, x = 0; i < end; i++, x++)
