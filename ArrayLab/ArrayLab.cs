@@ -200,6 +200,7 @@ namespace IntroCS
     /// Example: If a contains {2, 5, 8, 3, 9, 9, 8}, print
     /// 2 5 8
     /// 3 9 9
+    /// 8
     /// </summary>
     /// <param name="a">Array to check</param>
     static void PrintRuns(int[] a)
@@ -209,22 +210,23 @@ namespace IntroCS
         int innerCount = 1;
         if (runStart == (a.Length))
         {
-          Console.WriteLine("Run #" + k + ":" + a[a.Length - 1]);
+          Console.WriteLine("Run #" + k + " " + a[a.Length - 1]);
           return;
         }
         for (int i = runStart + 1; i < a.Length; i++)
         {
-          if (a[i - 1] <= a[i])
-          {
-            innerCount++;
-          }
-          else
-          {
-            runEnd = innerCount + runStart;
-            break;
-          }
+            if (a[i - 1] <= a[i])
+            {
+              innerCount++;
+            }
+            else
+            {
+              runEnd = innerCount + runStart;
+              break;
+            }
         }
-        PrintInts("Run #" + k, (ReturnInts(a, runStart, runEnd)));
+        int currentRunStart = runStart;
+        PrintInts("Run#" + k, (ReturnInts(a, currentRunStart, runEnd)));
         runStart = runEnd + 1;
       }
     }
