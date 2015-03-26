@@ -14,9 +14,9 @@ namespace IntroCS
       while (big != 0)
       {
         Console.WriteLine("\nIn this game you guess a positive number less " + 
-                          "than " + big);
+                          "than {0}", big);
         Game(big);
-        big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
+        big = UI.PromptInt("Enter a secret number limit (or zero to quit): ");
       }
       Console.WriteLine("Ending Game, Goodbye!");
     }
@@ -25,10 +25,9 @@ namespace IntroCS
     {
       while (big != 0)
       {
-        Console.WriteLine("\nIn this game you guess a positive number less " +
-                          "than " + big);
+        Console.WriteLine("\nIn this game I will try to guess a number you imagine less than {0}", big);
         GameReversed(big);
-        big = UI.PromptInt("Enter a secret number bound (or zero to quit): ");
+        big = UI.PromptInt("Enter a secret number limit (or zero to quit): ");
       }
       Console.WriteLine("Ending Game, Goodbye!");
     }
@@ -87,6 +86,10 @@ namespace IntroCS
           little = computerGuessNumber;
           computerGuessNumber = randomNumber(little + 1, big);
         }
+        else if (numberCheck == "e")
+        {
+          break;
+        }
         else
         {
           Console.WriteLine("\nInvalid Input! Try again: ");
@@ -113,8 +116,8 @@ namespace IntroCS
                                        "\nEnter", 0, 1);
       int big = UI.PromptInt("\nEnter a secret number upper limit (or zero " + 
                              "to quit): ");
-      if (choice == 1) { StartGame(big); }
-      else if (choice == 0) { StartReversedGame(big); }
+      if (choice == 0) { StartGame(big); }
+      else if (choice == 1) { StartReversedGame(big); }
     }
   }
 }
