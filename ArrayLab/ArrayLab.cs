@@ -4,7 +4,6 @@ namespace IntroCS
 {
   public class ArrayLab
   {
-    // Link to lab, http://introcs.cs.luc.edu/html/lab-array1d.html?highlight=printnums
     public static void Main()
     { /// Include test:. Display test input and output
       /// with liberal use of PrintInts,
@@ -13,6 +12,9 @@ namespace IntroCS
       int[] b = new int[] { 5, 6, 7, 8 };
       int[] c = new int[] { 9, 10, 11, 12 };
       int[] d = new int[] { 2, 5, 8, 3, 9, 9, 8 };
+      double[] e = new double[] { 1.5, 2.0, 3.0 };
+      double[] f = new double[] { 4.0, 2.0, -1.0 };
+      int[] binary = new int[] { 1, 0, 0, 1, 1 };
       string prompt = "prompt";
       string label = "label";
       PrintInts(label, a);
@@ -24,8 +26,10 @@ namespace IntroCS
       IsAscending(a);
       Console.WriteLine("PrintRuns Test: ");
       PrintRuns(d);
+      Console.WriteLine("VectorDotProduct Test: {0:F1}", VectorDotProduct(e,f));
+      Console.WriteLine(ArrayToValueCustomBase(a, 10));
+      Console.WriteLine(ArrayToValue(a));
     }
-    //PrintInts chunk
     /// Print label and then each element preceeded by a space,
     ///  all across one line.  Example:
     ///  If a contains {3, -1, 5} and label is "Nums:",
@@ -39,7 +43,6 @@ namespace IntroCS
       }
       Console.WriteLine();
     }
-    //ReadInts chunk
     ///  Prompt the user to enter n integers, and
     ///  return an array containing them.
     ///  Example:  ReadInts("Enter values", 3) could generate the
@@ -61,7 +64,6 @@ namespace IntroCS
       PrintInts("ReadInts test: ", a);
       return a;
     }
-    //Minimum chunk
     ///  Return the minimum value in a.
     ///  Example: If a contains {5, 7, 4, 9}, return 4.
     ///  Assume a contains at least one value.
@@ -79,7 +81,6 @@ namespace IntroCS
       Console.WriteLine("Minimum test: " + min);
       return min;
     }
-    //CountEven chunk
     ///  Return the number of even values in a.
     ///  Example: If a contains {-4, 7, 6, 12, 9}, return 3.
     static int CountEven(int[] a)
@@ -95,7 +96,6 @@ namespace IntroCS
       Console.WriteLine("CountEven test: " + i);
       return i;
     }
-    //PairwiseAdd chunk
     ///  Add corresponding elements of a and b and place them in sum.
     ///  Assume all arrays have the same Length.
     ///  Example: If a contains {2, 4, 6} and b contains {7, -1, 8}
@@ -108,7 +108,6 @@ namespace IntroCS
       }
       PrintInts("PairwisAdd test", sum);
     }
-    //NewPairwiseAdd chunk
     ///  Return a new array whose elements are the sums of the
     ///  corresponding elements of a and b.
     ///  Assume a and b have the same Length.
@@ -132,7 +131,6 @@ namespace IntroCS
         return sum;
       }
     }
-    //IsAscending chunk
     ///  Return true if the numbers are sorted in increasing order,
     ///  so that in each pair of consecutive entries,
     ///  the second is always at least as large as the first.
@@ -165,7 +163,6 @@ namespace IntroCS
         return false;
       }
     }
-    //PrintAscendingValues chunk
     ///  Print an ascending sequence from the elements
     ///  of a, starting with the first element and printing
     ///  the next number after the previous number
@@ -215,15 +212,15 @@ namespace IntroCS
         }
         for (int i = runStart + 1; i < a.Length; i++)
         {
-            if (a[i - 1] <= a[i])
-            {
-              innerCount++;
-            }
-            else
-            {
-              runEnd = innerCount + runStart;
-              break;
-            }
+          if (a[i - 1] <= a[i])
+          {
+            innerCount++;
+          }
+          else
+          {
+            runEnd = innerCount + runStart;
+            break;
+          }
         }
         int currentRunStart = runStart;
         PrintInts("Run#" + k, (ReturnInts(a, currentRunStart, runEnd)));
@@ -259,6 +256,73 @@ namespace IntroCS
         newAscendingArray[x] = a[i];
       }
       return newAscendingArray;
+    }
+    /// <summary>
+    /// Computes floating point sum of a[i] * b[i] (for all i) if arrays are 
+    /// equal length
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns>Sum of (a[i] * b[i]) for all i</returns>
+    static double VectorDotProduct(double[] a, double[] b)
+    {
+      if (a.Length == b.Length)
+      {
+        var x = new double[a.Length];
+        double y = 0;
+        for (int i = 0; i < a.Length; i++)
+        {
+          x[i] = a[i] * b[i];
+        }
+        foreach (double z in x)
+        {
+          y += z;
+        }
+        return y;
+      }
+      else
+      {
+        Console.WriteLine("Miss matched array lengths.");
+        return 0;
+      }
+    }
+    static long ArrayToValueCustomBase(int[] digits, int numericBase)
+    {
+      int[] reveresedDigits = digits;
+      Array.Reverse(reveresedDigits);
+      double numTotal = 0;
+      for (int i = 0; i < reveresedDigits.Length; i++)
+      {
+        if (reveresedDigits[i] < 0)
+        {
+          Console.WriteLine("Negative digit found, invalid input");
+          return 0;
+        }
+        numTotal += (reveresedDigits[i] * (Math.Pow(numericBase, i)));
+      }
+      return (long)numTotal;
+    }
+    /// <summary>
+    /// Array of single pos digits representing base 10 number to int value
+    /// </summary>
+    /// <param name="digits">Single digits positive array</param>
+    /// <returns>Value of array as a long</returns>
+    static long ArrayToValue(int[] digits)
+    {
+      long numTotal = 0;
+      int numericBase = 10;
+      int[] reveresedDigits = digits;
+      Array.Reverse(reveresedDigits);
+      for (int i = 0; i < digits.Length; i++)
+      {
+        if (digits[i] < 0)
+        {
+          Console.WriteLine("Negative digit found, invalid input");
+          return 0;
+        }
+        numTotal = (numTotal * numericBase) + digits[i];
+      }
+      return numTotal;
     }
   }
 }
