@@ -3,6 +3,7 @@ namespace quotient2
 {
   class Quotient
   {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2241:Provide correct arguments to formatting methods")]
     static void Main() // simple program that calculates the quotient of two integers and also prints the remainder
     {
       string dividend, divisor;
@@ -16,7 +17,7 @@ namespace quotient2
       y = int.Parse(divisor);
       q = x / y;
       r = x % y;
-      Console.WriteLine("The quotient of the input integers is {0}.", q, r);
+      Console.WriteLine("The quotient of the input integers is {0}.", q);
       Console.WriteLine("The remainder is " + r + ".");
     }
   }
