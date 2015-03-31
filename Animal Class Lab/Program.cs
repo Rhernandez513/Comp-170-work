@@ -19,12 +19,14 @@ namespace IntroCS
 
       Froggy.Greet();
       Froggy.Eat("fly");
+      Console.WriteLine(Froggy);
       Froggy.Eat("worm");
       Console.WriteLine(Froggy);
-      Froggy.Excrete();
-      Froggy.Excrete();
-      Froggy.Excrete();
-      Console.WriteLine(Froggy);
+      for (int i = 0; i < 3; i++)
+      {
+        Froggy.Excrete();
+        Console.WriteLine(Froggy);
+      }
       Console.WriteLine(DonkeyKong);
     }
   }

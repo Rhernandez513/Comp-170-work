@@ -23,6 +23,7 @@ namespace IntroCS
     }
     public void Eat(string food)
     {
+      Console.WriteLine("{0} is eating {1}", name, food);
       gut.Add(food);
       this.gutContents++;
     }
@@ -34,7 +35,7 @@ namespace IntroCS
       }
       else
       {
-        Console.WriteLine(gut.First());
+        Console.WriteLine(name + " excreted " + gut.First());
         gut.Remove(gut.First());
         this.gutContents--;
       }
@@ -43,10 +44,14 @@ namespace IntroCS
     {
       if (gut.Count == 0)
       {
-        return ("Animal: " + name + " ate nothing");
+        return ("Animal: " + name + " has nothing in his gut.");
       }
-
-      StringBuilder gutStr = new StringBuilder("Animal: ");
+      else if (gut.Count == 1)
+      {
+        return ("Animal: " + name + " ate " + gut.First());
+      }
+      StringBuilder gutStr = new StringBuilder();
+      gutStr = gutStr.AppendFormat("Animal: {0} ate ", name);
       foreach (string s in gut)
       {
         if (s == gut.Last())
