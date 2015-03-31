@@ -20,11 +20,12 @@ namespace IntroCS
       Froggy.Greet();
       Froggy.Eat("fly");
       Froggy.Eat("worm");
+      Console.WriteLine(Froggy);
       Froggy.Excrete();
       Froggy.Excrete();
       Froggy.Excrete();
-      Froggy.ToString();
-      Console.WriteLine("TestAnimal still needs to be implemented");
+      Console.WriteLine(Froggy);
+      Console.WriteLine(DonkeyKong);
     }
   }
 }
