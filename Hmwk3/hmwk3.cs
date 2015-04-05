@@ -26,12 +26,12 @@ namespace IntroCS
         {
           Abbrev.Append(s);
         }
-        return "" + Abbrev;
+        return ("" + Abbrev).Trim();
       }
       else
       {
         string Abbrev = UI.PromptLine("Please enter a course Abbreviation: ");
-        return Abbrev;
+        return Abbrev.Trim();
       }
     }
   }
