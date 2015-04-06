@@ -55,10 +55,11 @@ namespace IntroCS
     public static int[] GetCategoryCodes(List<string[]>ClassInfo)
     {
       string [] classCategoryCodes = new string [] {"E", "L", "H", "P", "C"};
-      int[] categoryLabel = new int[classCategoryCodes.Length - 1];
+      string[] classCategories = GetSpecificArray(ClassInfo, 0);
+      int[] categoryLabel = new int[classCategoryCodes.Length];
       for(int i = 0; i < classCategoryCodes.Length; i++)
       {
-      categoryLabel[i] = codeIndex(classCategoryCodes[i] ,GetSpecificArray(ClassInfo, 0));
+      categoryLabel[i] = codeIndex((classCategoryCodes[i]) ,classCategories);
       }
       return categoryLabel;
     }
@@ -84,10 +85,10 @@ namespace IntroCS
     /// <returns></returns>
     public static string[] GetSpecificArray(List<string[]> stringArray, int x)
     {
-      string[] desiredArray = new string [stringArray.Count];
-      for (int i = 0; i < stringArray.Count; i++)
+      string[] desiredArray = new string [stringArray[x].Length];
+      for (int i = 0; i < stringArray[x].Length; i++)
       {
-        desiredArray[i] = (stringArray[i])[x];
+        desiredArray[i] = (stringArray[x])[i];
       }
       return desiredArray;
     }
