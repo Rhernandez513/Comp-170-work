@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Grade_File.cs" />
     <Compile Include="hmwk3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
