@@ -11,12 +11,39 @@ namespace IntroCS
   {
     static void Main(string[] args)
     {
-      string catFileName = ("categories_" + GetAbbrev(args) + ".txt");
-      string studentFileName = ("students_" + GetAbbrev(args) + ".txt");
-      var classInfo = GetFileInfo(catFileName);
+      string CourseAbbreviation = GetAbbrev(args);
+      string catFileName = ("categories_" + CourseAbbreviation + ".txt");
+
+      string classRosterFile = ("students_" + CourseAbbreviation + ".txt");
+
+      List<string []> classInfo = GetFileInfo(catFileName, args);
+
+      List<string []> studentInfo = GetFileInfo(classRosterFile, args);
+
+      string[] studentIDs = GetSpecificArray(studentInfo, 0);
+
       int totWeights = GetWeightTotals(classInfo);
     }
-
+    /// <summary>
+    /// Gets string of Student ID's array out of List<string[]>
+    /// </summary>
+    /// <param name="stringArray">List to extract String[] from</param>
+    /// <param name="x">IndexOf desired String[] to Extract</param>
+    /// <returns></returns>
+    public static string[] GetSpecificArray(List<string[]> stringArray, int x)
+    {
+      string[] IDs = new string [stringArray.Count];
+      for (int i = 0; i < stringArray.Count; i++)
+      {
+        IDs[i] = (stringArray[i])[x];
+      }
+      return IDs;
+    }
+    /// <summary>
+    /// Calculates Weight totals for the Class
+    /// </summary>
+    /// <param name="MasterList"></param>
+    /// <returns></returns>
     private static int GetWeightTotals(List<string[]> MasterList)
     {
       int weight = 0;
@@ -31,14 +58,24 @@ namespace IntroCS
     /// per category based on Input class code
     /// </summary>
     /// <returns>List of Arrays, each containing relavent info</returns>
-    private static List<string[]> GetFileInfo(string fileID)
+    private static List<string[]> GetFileInfo(string fileID, string [] args)
     {
       StreamReader codeReader = FIO.OpenReader(FIO.GetLocation(fileID),
                                                fileID);
-      string[] a = codeReader.ReadLine().Trim().Split(',');
-      string[] b = codeReader.ReadLine().Trim().Split(',');
-      string[] c = codeReader.ReadLine().Trim().Split(',');
-      List<string[]> MasterList = new List<string[]> { a, b, c };
+      List<string[]> MasterList = null;
+      if (GetAbbrev(args) == "comp170")
+      {
+        string[] a = codeReader.ReadLine().Trim().Split(',');
+        string[] b = codeReader.ReadLine().Trim().Split(',');
+        string[] c = codeReader.ReadLine().Trim().Split(',');
+        MasterList = new List<string[]> { a, b, c };
+      }
+      else if (GetAbbrev(args) == "comp150")
+      {
+        string[] a = codeReader.ReadLine().Trim().Split(',');
+        string[] b = codeReader.ReadLine().Trim().Split(',');
+        MasterList = new List<string[]> { a, b };
+      }
       codeReader.Close();
       foreach (string[] x in MasterList)
       {
@@ -46,12 +83,15 @@ namespace IntroCS
       }
       return MasterList;
     }
+    /// <summary>
+    /// Trims Whitespace from array elements
+    /// </summary>
+    /// <param name="s"></param>
     static void whiteSpaceRemove(string[] s)
     {
       for (int i = 0; i < s.Length; i++)
       {
         s[i] = s[i].Trim();
-        Console.WriteLine(s[i]);
       }
     }
     /// <summary>
