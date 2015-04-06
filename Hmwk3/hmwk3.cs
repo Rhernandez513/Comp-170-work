@@ -63,20 +63,25 @@ namespace IntroCS
       }
       return categoryLabel;
     }
-    public void GetStudentGrades(List<string[]> StudentInfo, string courseAbbreviation)
-    {
-      string[] studentIDs = GetSpecificArray(StudentInfo, 0);
-      for (int i = 0; i < studentIDs.Length; i++)
-      {
-        string studentGradeFile = (studentIDs[i] + courseAbbreviation + ".data");
-        StreamReader gradeReader = FIO.OpenReader(FIO.GetLocation(studentGradeFile), studentGradeFile);
-        while (!gradeReader.EndOfStream)
-        {
-        string[] eachLine = gradeReader.ReadLine().Trim().Split(',');
-        }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="StudentInfo"></param>
+    /// <param name="courseAbbreviation"></param>
+    //public void GetStudentGrades(List<string[]> StudentInfo, string courseAbbreviation)
+    //{
+    //  string[] studentIDs = GetSpecificArray(StudentInfo, 0);
+    //  for (int i = 0; i < studentIDs.Length; i++)
+    //  {
+    //    string studentGradeFile = (studentIDs[i] + courseAbbreviation + ".data");
+    //    StreamReader gradeReader = FIO.OpenReader(FIO.GetLocation(studentGradeFile), studentGradeFile);
+    //    while (!gradeReader.EndOfStream)
+    //    {
+    //    string[] eachLine = gradeReader.ReadLine().Trim().Split(',');
+    //    }
 
-      }
-    }
+    //  }
+    //}
     /// <summary>
     /// Gets a String array out of List<string[]>
     /// </summary>
