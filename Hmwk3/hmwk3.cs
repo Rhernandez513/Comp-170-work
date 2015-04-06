@@ -25,19 +25,19 @@ namespace IntroCS
       int totWeights = GetWeightTotals(classInfo);
     }
     /// <summary>
-    /// Gets string of Student ID's array out of List<string[]>
+    /// Gets a String array out of List<string[]>
     /// </summary>
     /// <param name="stringArray">List to extract String[] from</param>
     /// <param name="x">IndexOf desired String[] to Extract</param>
     /// <returns></returns>
     public static string[] GetSpecificArray(List<string[]> stringArray, int x)
     {
-      string[] IDs = new string [stringArray.Count];
+      string[] desiredArray = new string [stringArray.Count];
       for (int i = 0; i < stringArray.Count; i++)
       {
-        IDs[i] = (stringArray[i])[x];
+        desiredArray[i] = (stringArray[i])[x];
       }
-      return IDs;
+      return desiredArray;
     }
     /// <summary>
     /// Calculates Weight totals for the Class
