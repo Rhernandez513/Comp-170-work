@@ -68,6 +68,7 @@ namespace IntroCS
     }
 
     /// <summary>
+    /// doesn't work yet
     /// </summary>
     /// <param name="StudentInfo"></param>
     /// <param name="courseAbbreviation"></param>
@@ -82,16 +83,21 @@ namespace IntroCS
       {
         string studentGradeFile = (studentIDs[i] + courseAbbreviation + ".data");
         StreamReader gradeReader = FIO.OpenReader(FIO.GetLocation(studentGradeFile), studentGradeFile);
-        Dictionary<string, int> eachGradeInCategory = new Dictionary<string, int>();
-        List<string> eachLine = new List<string>();
-        eachLine.Add((gradeReader.ReadLine().Trim().Split(',')));
 
+        Dictionary<string, double> eachGradeInCategory = new Dictionary<string, double>();
+
+        //List<string> eachLine = new List<string>();
+        //foreach (string a in oneLine)
+        //{
+        //  eachLine.Add(a);
+        //}
         do
         {
-          //whiteSpaceRemove(eachLine);
-          //tempGrade = int.Parse(eachLine.Last<string>());
-          //currentCategory = eachLine;
-          //eachGradeInCategory.Add(currentCategory, tempGrade);
+          string[] oneLine = gradeReader.ReadLine().Trim().Split(',');
+          WhiteSpaceRemove(oneLine);
+          tempGrade = int.Parse(oneLine[3]);
+          currentCategory = oneLine[0];
+          eachGradeInCategory.Add(currentCategory, tempGrade);
 
         } while (!gradeReader.EndOfStream);
 
@@ -160,7 +166,7 @@ namespace IntroCS
       codeReader.Close();
       foreach (string[] x in MasterList)
       {
-        whiteSpaceRemove(x);
+        WhiteSpaceRemove(x);
       }
       return MasterList;
     }
@@ -169,7 +175,7 @@ namespace IntroCS
     /// Trims Whitespace from array elements
     /// </summary>
     /// <param name="s"></param>
-    private static void whiteSpaceRemove(string[] s)
+    private static void WhiteSpaceRemove(string[] s)
     {
       for (int i = 0; i < s.Length; i++)
       {
