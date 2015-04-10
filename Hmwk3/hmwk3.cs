@@ -1,42 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace IntroCS
 {
-  class Hmwk3
+  internal class Hmwk3
   {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-      string CourseAbbreviation = GetAbbrev(args);
+      string courseAbbreviation = GetAbbrev(args);
 
-      string catFileName = ("categories_" + CourseAbbreviation + ".txt");
+      string catFileName = ("categories_" + courseAbbreviation + ".txt");
 
-      string classRosterFile = ("students_" + CourseAbbreviation + ".txt");
+      string classRosterFile = ("students_" + courseAbbreviation + ".txt");
 
       List<string[]> classInfo = GetFileInfo(catFileName, 3);
 
       List<string[]> studentInfo = new List<string[]>();
-      if (CourseAbbreviation == "comp170")
+      if (courseAbbreviation == "comp170")
       {
         studentInfo = GetFileInfo(classRosterFile, 4);
       }
-      else if (CourseAbbreviation == "comp150")
+      else if (courseAbbreviation == "comp150")
       {
         studentInfo = GetFileInfo(classRosterFile, 2);
       }
 
-      int totWeights = GetWeightTotals(classInfo);
+      int totalWeights = GetWeightTotals(classInfo);
 
       int[] assignmentCategoryCodes = GetCategoryCodes(classInfo);
+      GetStudentGrades(studentInfo, courseAbbreviation, totalWeights);
 
     }
-    /// Take the first letter code for a catagory, and 
-    /// return the index of that category in categories.
-    static int codeIndex(string code, string[] categories)
+
+    /// Take the first letter code for a catagory, and return the index of that
+    /// category in categories.
+    private static int codeIndex(string code, string[] categories)
     {
       for (int i = 0; i < categories.Length; i++)
       {
@@ -47,56 +49,68 @@ namespace IntroCS
       }
       return -1; //required by compiler: shouldn't reach
     }
+
     /// <summary>
     /// Uses codeIndex to return the indexOf each classCategory
     /// </summary>
     /// <param name="ClassInfo"></param>
     /// <returns></returns>
-    public static int[] GetCategoryCodes(List<string[]>ClassInfo)
+    public static int[] GetCategoryCodes(List<string[]> ClassInfo)
     {
-      string [] classCategoryCodes = new string [] {"E", "L", "H", "P", "C"};
+      string[] classCategoryCodes = new string[] { "E", "L", "H", "P", "C" };
       string[] classCategories = GetSpecificArray(ClassInfo, 0);
       int[] categoryLabel = new int[classCategoryCodes.Length];
-      for(int i = 0; i < classCategoryCodes.Length; i++)
+      for (int i = 0; i < classCategoryCodes.Length; i++)
       {
-      categoryLabel[i] = codeIndex((classCategoryCodes[i]) ,classCategories);
+        categoryLabel[i] = codeIndex((classCategoryCodes[i]), classCategories);
       }
       return categoryLabel;
     }
+
     /// <summary>
-    /// 
     /// </summary>
     /// <param name="StudentInfo"></param>
     /// <param name="courseAbbreviation"></param>
-    //public void GetStudentGrades(List<string[]> StudentInfo, string courseAbbreviation)
-    //{
-    //  string[] studentIDs = GetSpecificArray(StudentInfo, 0);
-    //  for (int i = 0; i < studentIDs.Length; i++)
-    //  {
-    //    string studentGradeFile = (studentIDs[i] + courseAbbreviation + ".data");
-    //    StreamReader gradeReader = FIO.OpenReader(FIO.GetLocation(studentGradeFile), studentGradeFile);
-    //    while (!gradeReader.EndOfStream)
-    //    {
-    //    string[] eachLine = gradeReader.ReadLine().Trim().Split(',');
-    //    }
+    /// <param name="ClassWeightTotals"></param>
+    public static void GetStudentGrades(List<string[]> StudentInfo, string courseAbbreviation, int ClassWeightTotals)
+    {
+      double tempGrade, categoryGrade, finalGrade;
+      string currentCategory;
 
-    //  }
-    //}
-    /// <summary>
-    /// Gets a String array out of List<string[]>
-    /// </summary>
-    /// <param name="stringArray">List to extract String[] from</param>
-    /// <param name="x">IndexOf desired String[] to Extract</param>
-    /// <returns></returns>
+      string[] studentIDs = GetSpecificArray(StudentInfo, 0);
+      for (int i = 0; i < studentIDs.Length; i++)
+      {
+        string studentGradeFile = (studentIDs[i] + courseAbbreviation + ".data");
+        StreamReader gradeReader = FIO.OpenReader(FIO.GetLocation(studentGradeFile), studentGradeFile);
+        Dictionary<string, int> eachGradeInCategory = new Dictionary<string, int>();
+        List<string> eachLine = new List<string>();
+        eachLine.Add((gradeReader.ReadLine().Trim().Split(',')));
+
+        do
+        {
+          //whiteSpaceRemove(eachLine);
+          //tempGrade = int.Parse(eachLine.Last<string>());
+          //currentCategory = eachLine;
+          //eachGradeInCategory.Add(currentCategory, tempGrade);
+
+        } while (!gradeReader.EndOfStream);
+
+      }
+    }
+
+    /// <summary> Gets a String array out of List<string[]> </summary> <param
+    /// name="stringArray">List to extract String[] from</param> <param
+    /// name="x">IndexOf desired String[] to Extract</param> <returns></returns>
     public static string[] GetSpecificArray(List<string[]> stringArray, int x)
     {
-      string[] desiredArray = new string [stringArray[x].Length];
+      string[] desiredArray = new string[stringArray[x].Length];
       for (int i = 0; i < stringArray[x].Length; i++)
       {
         desiredArray[i] = (stringArray[x])[i];
       }
       return desiredArray;
     }
+
     /// <summary>
     /// Calculates Weight totals for the Class
     /// </summary>
@@ -111,9 +125,10 @@ namespace IntroCS
       }
       return weight;
     }
+
     /// <summary>
-    /// Gets Categories, Weights, and Number of grades 
-    /// per category based on Input class code
+    /// Gets Categories, Weights, and Number of grades per category based on
+    /// Input class code
     /// </summary>
     /// <returns>List of Arrays, each containing relavent info</returns>
     private static List<string[]> GetFileInfo(string fileID, int numberofArrays)
@@ -149,17 +164,19 @@ namespace IntroCS
       }
       return MasterList;
     }
+
     /// <summary>
     /// Trims Whitespace from array elements
     /// </summary>
     /// <param name="s"></param>
-    static void whiteSpaceRemove(string[] s)
+    private static void whiteSpaceRemove(string[] s)
     {
       for (int i = 0; i < s.Length; i++)
       {
         s[i] = s[i].Trim();
       }
     }
+
     /// <summary>
     /// Gets command line args and returns as a string
     /// </summary>
