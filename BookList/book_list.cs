@@ -36,14 +36,23 @@ namespace IntroCS
     /// with each book separated by a blank line. 
     public void PrintList() // 
     {  // everyone code;    for extra credit, note assignment instructions
-
+      foreach (Book a in list)
+      {
+        Console.WriteLine(""+ a + "\n");
+      }
     }
     //PrintTitlesByAuthor chunk
     // List the titles (only!), one per line, of each book 
     // in the list that is by the specified author. 
     public void PrintTitlesByAuthor(string author)
     {  //code
-
+      foreach (Book a in list)
+      {
+        if(a.author == author)
+        {
+          Console.WriteLine(a.title);
+        }
+      }
     }
     //PrintBooksInYears chunk
     // List the full descriptions of each book printed
@@ -51,7 +60,13 @@ namespace IntroCS
     // with each book separated by a blank line. 
     public void PrintBooksInYears(int firstYear, int lastYear)
     {  // code
-
+      foreach (Book a in list)
+      {
+        if (a.year >= firstYear && a.year <= lastYear)
+        {
+          Console.WriteLine("" + a);
+        }
+      }
     }
 
     ////////////////////////////
