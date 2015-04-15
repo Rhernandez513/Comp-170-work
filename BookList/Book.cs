@@ -13,68 +13,69 @@ using System.Threading.Tasks;
 
 namespace IntroCS
 {
-
-   /// A class that maintains information on a book. 
-   public class Book
-   {
-      private String title;
-      private String author;
-      private int year;  // of publication
-
-      public Book(String title, String author, int year)
-      { //code
-
-      }
-
-      /// Return the title. 
-      public String GetTitle()
-      {  
-   
-         return "Not coded"; //just so skeleton compiles
-      }
-
-      /// Return the author. 
-      public String GetAuthor()
-      {  
-
-         return "Not coded"; //just so skeleton compiles
-      }
-
-      /// Return the year of publication. 
-      public int GetYear()
-      {  // code!
-
-         return 0; //just so skeleton compiles
-      }
-                                                        
-      /// Return a multi-line String labeling all Book information. 
-      public override string ToString()
-      {  
-
-         return "Not coded"; //just so skeleton compiles
-      }
-
-      ////////////////////////////////////
-      // Extra credit methods hereafter //
-      ////////////////////////////////////
-                                                  // extra credit Book chunk
-      /// Construct a Book, taking data from reader.
-      /// Read through three lines that contain the
-      /// title, author, and year of publication, respectively.
-      /// There may be an extra blank line at the beginning.
-      /// If so ignore it.
-      /// Nothing beyond the line with the year is read. 
-      public Book(StreamReader reader)
-      {  // code for extra credit!
-
-      }
-                                                  // extra credit IsEqual chunk
-     // Return true if all the corresponding fields in this Book
-      // and in aBook are equal.  Return false otherwise.  
-      public bool IsEqual(Book aBook)
-      {// code for extra credit
-
-         return true; //so skeleton compiles
-      }
+  /// <summary>
+  /// A Class that maintains information on a Book
+  /// </summary>
+  public class Book
+  {
+    /// <summary>
+    /// Title of Book
+    /// </summary>
+    public String title { get; set; }
+    /// <summary>
+    /// Author of Book
+    /// </summary>
+    public String author { get; set; }
+    /// <summary>
+    /// Year of Publication
+    /// </summary>
+    public int year { get; set; }
+    /// <summary>
+    /// A Simple Book
+    /// </summary>
+    /// <param name="title">Title of Book</param>
+    /// <param name="author">Author of Book</param>
+    /// <param name="year">Year of Publication</param>
+    public Book(String title, String author, int year)
+    {
+      this.title = title;
+      this.author = author;
+      this.year = year;
    }
+
+    /// <summary>
+    /// Returns a multi-line String labeling all Book information.
+    /// </summary>
+    /// <returns>A multi-line String labeling all Book information</returns>
+    public override string ToString()
+    {
+      string bookData = (@"Title: " + title + @"
+Author: " + author + @"
+Year: " + year);
+      return bookData;
+    }
+
+    ////////////////////////////////////
+    // Extra credit methods hereafter //
+    ////////////////////////////////////
+    // extra credit Book chunk
+    /// Construct a Book, taking data from reader.
+    /// Read through three lines that contain the
+    /// title, author, and year of publication, respectively.
+    /// There may be an extra blank line at the beginning.
+    /// If so ignore it.
+    /// Nothing beyond the line with the year is read. 
+    public Book(StreamReader reader)
+    {  // code for extra credit!
+
+    }
+    // extra credit IsEqual chunk
+    // Return true if all the corresponding fields in this Book
+    // and in aBook are equal.  Return false otherwise.  
+    public bool IsEqual(Book aBook)
+    {// code for extra credit
+
+      return true; //so skeleton compiles
+    }
+  }
 }

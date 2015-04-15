@@ -8,22 +8,27 @@ using System.Threading.Tasks;
 
 namespace IntroCS
 {
-  /// A class that maintains a list of books. 
+  /// <summary>
+  /// A class that maintains a list of books.
+  /// </summary> 
   public class BookList
   {
-    private List<Book> list;
+    public List<Book> list { get; private set; }
 
     /// Create an empty list of books. 
     public BookList()
     {
       list = new List<Book>();
     }
-    //AddBook chunk
-    // Add book to the list.
+    /// <summary>
+    ///Add book to the list.
     // The regular assignment version always returns true. 
+    /// </summary>
+    /// <param name="book">The Book to Add to the List</param>
+    /// <returns></returns>
     public bool Addbook(Book book)
-    {   // code
-
+    {
+      this.list.Add(book);
       return true; //always true in basic assignment
     }
     //PrintList chunk

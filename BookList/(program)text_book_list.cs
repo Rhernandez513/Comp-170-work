@@ -15,10 +15,13 @@ namespace IntroCS
     public static void Main()
     {
       BookList books = new BookList();
-      // ...
-      books.Addbook(new Book("C# Yellow Book", "Rob Miles", 2011));
-      // Add more!
-      // ...
+      Book test = new Book("C# Yellow Book", "Rob Miles", 2011);
+      books.Addbook(test);
+
+      //tests Book ToString Override
+      Console.WriteLine(test);
+
+      //...
       Console.WriteLine("The full list is:");
       books.PrintList();
       // Add more tests to fully test your code.
