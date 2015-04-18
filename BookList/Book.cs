@@ -5,12 +5,6 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 
-// Names:
-// Help from:
-/* Help details:
-
-*/
-
 namespace IntroCS
 {
   /// <summary>

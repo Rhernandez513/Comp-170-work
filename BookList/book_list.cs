@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
-// Names:
 
 namespace IntroCS
 {
@@ -59,7 +58,7 @@ namespace IntroCS
     // in the range of years specified,
     // with each book separated by a blank line. 
     public void PrintBooksInYears(int firstYear, int lastYear)
-    {  // code
+    {
       foreach (Book a in list)
       {
         if (a.year >= firstYear && a.year <= lastYear)
