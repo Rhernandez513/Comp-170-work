@@ -76,7 +76,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayLab", "ArrayLab\ArrayL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animal Class Lab", "Animal Class Lab\Animal Class Lab.csproj", "{DE79C7F0-4E5F-4DB2-A732-EC32B9948F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hmwk4_BookList", "BookList\Hmwk4_BookList.csproj", "{90E6AA51-42D0-4B6E-8DBF-9C2BD88B9B68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hmwk4_BookList", "Hmwk4BookList\Hmwk4_BookList.csproj", "{90E6AA51-42D0-4B6E-8DBF-9C2BD88B9B68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hmwk3", "Hmwk3\Hmwk3.csproj", "{47732F5B-05C8-44BA-880A-7541B72DA724}"
 EndProject
