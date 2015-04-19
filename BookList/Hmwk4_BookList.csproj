@@ -53,6 +53,12 @@
     <Content Include="books.txt" />
     <Content Include="morebooks.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\fio\fio.csproj">
+      <Project>{38702508-4bee-4055-b478-1f9fa30c1630}</Project>
+      <Name>fio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
