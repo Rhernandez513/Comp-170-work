@@ -1,0 +1,4 @@
+[submodule "flaming-ironman"]
+	path = flaming-ironman
+	url = ./flaming-ironman
+	branch = addFlamingIronManTest
